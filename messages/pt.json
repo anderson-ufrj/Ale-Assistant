@@ -1,0 +1,30 @@
+{
+  "home": {
+    "title": "Software Compliance sem complicação",
+    "subtitle": "Entenda seus direitos, evite riscos legais e fale com nossa assistente virtual — Alê.",
+    "cta": "💬 Fale com Alê"
+  },
+  "footer": {
+    "text": "© 2025 Ale Assistant • Plataforma ética e educativa sobre Software Compliance"
+  },
+  "ale": {
+    "greeting": "Olá! Eu sou a Alê, sua assistente virtual.",
+    "authTitle": "Para continuar, faça login",
+    "authGoogle": "Entrar com Google",
+    "authMeta": "Entrar com Facebook",
+    "formTitle": "Quase lá! Complete seus dados",
+    "formWhatsApp": "WhatsApp (opcional)",
+    "formLanguage": "Idioma preferido",
+    "consentTitle": "Consentimento LGPD",
+    "consentText": "Concordo com o processamento dos meus dados pessoais para fins de comunicação sobre Software Compliance.",
+    "submitButton": "Enviar",
+    "successMessage": "Obrigado! Entraremos em contato em breve.",
+    "outOfHoursMessage": "Obrigado! Nossa equipe está fora do horário de atendimento. Entraremos em contato assim que possível.",
+    "errorMessage": "Ops! Algo deu errado. Por favor, tente novamente."
+  },
+  "languages": {
+    "pt": "Português",
+    "en": "English",
+    "es": "Español"
+  }
+}

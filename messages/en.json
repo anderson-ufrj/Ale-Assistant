@@ -1,0 +1,30 @@
+{
+  "home": {
+    "title": "Software Compliance made simple",
+    "subtitle": "Understand your rights, avoid legal risks, and talk to our virtual assistant — Alê.",
+    "cta": "💬 Talk to Alê"
+  },
+  "footer": {
+    "text": "© 2025 Ale Assistant • Ethical and educational platform about Software Compliance"
+  },
+  "ale": {
+    "greeting": "Hello! I'm Alê, your virtual assistant.",
+    "authTitle": "To continue, please sign in",
+    "authGoogle": "Sign in with Google",
+    "authMeta": "Sign in with Facebook",
+    "formTitle": "Almost there! Complete your information",
+    "formWhatsApp": "WhatsApp (optional)",
+    "formLanguage": "Preferred language",
+    "consentTitle": "Privacy Consent",
+    "consentText": "I agree to the processing of my personal data for communication purposes about Software Compliance.",
+    "submitButton": "Submit",
+    "successMessage": "Thank you! We'll be in touch soon.",
+    "outOfHoursMessage": "Thank you! Our team is currently out of office hours. We'll contact you as soon as possible.",
+    "errorMessage": "Oops! Something went wrong. Please try again."
+  },
+  "languages": {
+    "pt": "Português",
+    "en": "English",
+    "es": "Español"
+  }
+}

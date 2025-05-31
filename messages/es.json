@@ -1,0 +1,30 @@
+{
+  "home": {
+    "title": "Cumplimiento de Software sin complicaciones",
+    "subtitle": "Comprende tus derechos, evita riesgos legales y habla con nuestra asistente virtual — Alê.",
+    "cta": "💬 Hablar con Alê"
+  },
+  "footer": {
+    "text": "© 2025 Ale Assistant • Plataforma ética y educativa sobre Cumplimiento de Software"
+  },
+  "ale": {
+    "greeting": "¡Hola! Soy Alê, tu asistente virtual.",
+    "authTitle": "Para continuar, inicia sesión",
+    "authGoogle": "Iniciar sesión con Google",
+    "authMeta": "Iniciar sesión con Facebook",
+    "formTitle": "¡Casi listo! Completa tus datos",
+    "formWhatsApp": "WhatsApp (opcional)",
+    "formLanguage": "Idioma preferido",
+    "consentTitle": "Consentimiento de Privacidad",
+    "consentText": "Acepto el procesamiento de mis datos personales para fines de comunicación sobre Cumplimiento de Software.",
+    "submitButton": "Enviar",
+    "successMessage": "¡Gracias! Nos pondremos en contacto pronto.",
+    "outOfHoursMessage": "¡Gracias! Nuestro equipo está fuera del horario de atención. Nos pondremos en contacto lo antes posible.",
+    "errorMessage": "¡Ups! Algo salió mal. Por favor, inténtalo de nuevo."
+  },
+  "languages": {
+    "pt": "Português",
+    "en": "English",
+    "es": "Español"
+  }
+}
