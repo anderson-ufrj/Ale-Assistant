@@ -5,7 +5,9 @@
     "cta": "💬 Talk to Alê"
   },
   "footer": {
-    "text": "© 2025 Ale Assistant • Ethical and educational platform about Software Compliance"
+    "developed": "Developed by Anderson Henrique da Silva",
+    "copyright": "© 2025 Ale Assistant • All rights reserved",
+    "mission": "Promoting ethical and legal use of software in Brazil"
   },
   "ale": {
     "greeting": "Hello! I'm Alê, your virtual assistant.",
@@ -26,5 +28,69 @@
     "pt": "Português",
     "en": "English",
     "es": "Español"
+  },
+  "common": {
+    "selectLanguage": "Select language"
+  },
+  "riskAlert": {
+    "title": "Don't put yourself and your client at risk.",
+    "description": "Using unlicensed software can result in fines, lawsuits, and damage to your company's reputation. But most importantly: it compromises the trust your client places in you. Adopting Software Compliance is an ethical, preventive, and professional approach.",
+    "button": "How to protect yourself"
+  },
+  "compliance": {
+    "title": "About Software Compliance",
+    "description": "Software Compliance means using programs according to their licenses, respecting copyrights and intellectual property. It's an essential practice for companies that value ethics, security, and sustainability.",
+    "learnMore": "Learn more",
+    "features": {
+      "legal": {
+        "title": "Legal Compliance",
+        "description": "Avoid fines and lawsuits by keeping your licenses up to date and documented."
+      },
+      "security": {
+        "title": "Guaranteed Security",
+        "description": "Original software receives security updates, protecting your data and systems."
+      },
+      "reputation": {
+        "title": "Business Reputation",
+        "description": "Demonstrate professionalism and ethics, strengthening trust with clients and partners."
+      }
+    }
+  },
+  "sketchup": {
+    "title": "SketchUp for Architects and Engineers",
+    "subtitle": "Since 2018, Trimble has intensified anti-piracy actions in Brazil. Architecture and engineering offices are being notified and fined daily.",
+    "itca": {
+      "title": "⚠️ WARNING: ITCA is active in Brazil",
+      "description": "ITCA (IT Compliance Association) was hired by Trimble to identify irregular use of SketchUp. They have integrated technology that automatically detects unlicensed copies, even in small offices with less than 5 employees."
+    },
+    "risks": {
+      "financial": {
+        "title": "Heavy Fines",
+        "description": "Amounts applied by ITCA vary according to the number of machines identified. Additionally, attorney fees can increase the final amount by up to 50%.",
+        "highlight": "R$ 5,000 to R$ 20,000"
+      },
+      "legal": {
+        "title": "Criminal Consequences",
+        "description": "In Brazil, copyright violation results in compensation payment and can lead to imprisonment. The law provides for search and seizure of pirated copies.",
+        "highlight": "Damages up to 3,000x the value"
+      },
+      "professional": {
+        "title": "Reputation at Risk",
+        "description": "Companies caught with pirated software lose market credibility and may be prevented from participating in public tenders.",
+        "highlight": "Loss of public contracts"
+      }
+    },
+    "benefits": {
+      "title": "Benefits of Original SketchUp",
+      "support": "Official technical support",
+      "updates": "Constant updates",
+      "cloud": "Trimble Connect (cloud)",
+      "certification": "Compliance certificate"
+    },
+    "cta": {
+      "text": "Our specialized team is ready to help you regularize your situation",
+      "button": "Regularize Now",
+      "hours": "Service: Monday to Friday, 9am to 6pm"
+    }
   }
 }

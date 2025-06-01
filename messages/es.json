@@ -5,7 +5,9 @@
     "cta": "💬 Hablar con Alê"
   },
   "footer": {
-    "text": "© 2025 Ale Assistant • Plataforma ética y educativa sobre Cumplimiento de Software"
+    "developed": "Desarrollado por Anderson Henrique da Silva",
+    "copyright": "© 2025 Ale Assistant • Todos los derechos reservados",
+    "mission": "Promoviendo el uso ético y legal del software en Brasil"
   },
   "ale": {
     "greeting": "¡Hola! Soy Alê, tu asistente virtual.",
@@ -26,5 +28,32 @@
     "pt": "Português",
     "en": "English",
     "es": "Español"
+  },
+  "common": {
+    "selectLanguage": "Seleccionar idioma"
+  },
+  "riskAlert": {
+    "title": "No pongas en riesgo a ti mismo y a tu cliente.",
+    "description": "Usar software sin licencia puede generar multas, demandas y daños a la reputación de tu empresa. Pero lo más importante: compromete la confianza que tu cliente deposita en ti. Adoptar el Cumplimiento de Software es una actitud ética, preventiva y profesional.",
+    "button": "Cómo protegerse"
+  },
+  "compliance": {
+    "title": "Acerca del Cumplimiento de Software",
+    "description": "El Cumplimiento de Software significa usar programas de acuerdo con sus licencias, respetando los derechos de autor y la propiedad intelectual. Es una práctica esencial para empresas que valoran la ética, la seguridad y la sostenibilidad.",
+    "learnMore": "Más información",
+    "features": {
+      "legal": {
+        "title": "Cumplimiento Legal",
+        "description": "Evita multas y demandas manteniendo tus licencias al día y documentadas."
+      },
+      "security": {
+        "title": "Seguridad Garantizada",
+        "description": "El software original recibe actualizaciones de seguridad, protegiendo tus datos y sistemas."
+      },
+      "reputation": {
+        "title": "Reputación Empresarial",
+        "description": "Demuestra profesionalismo y ética, fortaleciendo la confianza de clientes y socios."
+      }
+    }
   }
 }
