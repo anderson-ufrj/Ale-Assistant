@@ -1,14 +1,49 @@
-import createNextIntlPlugin from 'next-intl/plugin';
+import createNextIntlPlugin from 'next-intl/plugin'
 
-const withNextIntl = createNextIntlPlugin('./lib/i18n.ts');
+const withNextIntl = createNextIntlPlugin()
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  // Removido output: 'export' para permitir uso de middleware com i18n
   images: {
-    unoptimized: false,
+    domains: [],
     formats: ['image/avif', 'image/webp'],
   },
-};
+  experimental: {
+    optimizeCss: true,
+  },
+  compiler: {
+    removeConsole: process.env.NODE_ENV === 'production',
+  },
+  swcMinify: true,
+  
+  // Performance optimizations
+  modularizeImports: {
+    'firebase/auth': {
+      transform: 'firebase/auth/{{member}}'
+    },
+    'firebase/firestore': {
+      transform: 'firebase/firestore/{{member}}'
+    },
+    'firebase/analytics': {
+      transform: 'firebase/analytics/{{member}}'
+    },
+    'lucide-react': {
+      transform: 'lucide-react/dist/esm/icons/{{member}}'
+    }
+  },
+  
+  webpack: (config, { isServer }) => {
+    // Tree-shake unused Firebase imports
+    if (!isServer) {
+      config.resolve.alias = {
+        ...config.resolve.alias,
+        '@firebase/auth': '@firebase/auth/dist/index.esm.js',
+        '@firebase/firestore': '@firebase/firestore/dist/index.esm.js',
+      }
+    }
+    
+    return config
+  }
+}
 
-export default withNextIntl(nextConfig);
+export default withNextIntl(nextConfig)
