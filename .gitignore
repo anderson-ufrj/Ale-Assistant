@@ -1,5 +1,5 @@
 # See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
-
+nao
 # dependencies
 /node_modules
 /.pnp
@@ -61,3 +61,8 @@ logs/
 serviceAccountKey.json
 *.pem
 *.key
+
+# Claude files
+CLAUDE.md
+*claude*
+*Claude*
