@@ -1,7 +1,62 @@
+'use client'
+
 import { useTranslations } from 'next-intl'
+import Image from 'next/image'
+import { getProfessionalImages } from '@/lib/imageConfig'
+import { useEffect, useState } from 'react'
 
 export default function SketchUpComplianceSection() {
+  const [mounted, setMounted] = useState(false)
   const t = useTranslations('sketchup')
+  
+  useEffect(() => {
+    setMounted(true)
+  }, [])
+  
+  if (!mounted) {
+    return (
+      <section className="py-20 px-4 md:px-6 lg:px-8 bg-gradient-to-b from-white to-orange-50 relative overflow-hidden">
+        <div className="max-w-6xl mx-auto relative z-10">
+          <div className="text-center mb-16">
+            <div className="h-16 bg-gray-200 rounded mb-6 animate-pulse"></div>
+            <div className="h-12 bg-gray-200 rounded max-w-3xl mx-auto animate-pulse"></div>
+          </div>
+          <div className="bg-red-50 border-2 border-red-200 rounded-2xl p-8 mb-12">
+            <div className="h-8 bg-gray-200 rounded mb-4 animate-pulse"></div>
+            <div className="h-16 bg-gray-200 rounded animate-pulse"></div>
+          </div>
+          <div className="grid md:grid-cols-3 gap-8 mb-16">
+            {[1,2,3].map((i) => (
+              <div key={i} className="bg-white rounded-2xl shadow-lg p-8">
+                <div className="w-16 h-16 bg-gray-200 rounded-2xl mb-6 animate-pulse"></div>
+                <div className="h-8 bg-gray-200 rounded mb-3 animate-pulse"></div>
+                <div className="h-16 bg-gray-200 rounded mb-4 animate-pulse"></div>
+                <div className="h-6 bg-gray-200 rounded animate-pulse"></div>
+              </div>
+            ))}
+          </div>
+          <div className="bg-gradient-to-r from-orange-500 to-orange-600 rounded-3xl p-12">
+            <div className="h-8 bg-orange-300 rounded mb-8 mx-auto w-64 animate-pulse"></div>
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
+              {[1,2,3,4].map((i) => (
+                <div key={i} className="text-center">
+                  <div className="h-12 bg-orange-300 rounded mb-3 animate-pulse"></div>
+                  <div className="h-6 bg-orange-300 rounded animate-pulse"></div>
+                </div>
+              ))}
+            </div>
+          </div>
+          <div className="text-center mt-12">
+            <div className="h-12 bg-gray-200 rounded mb-6 animate-pulse"></div>
+            <div className="h-16 bg-gray-200 rounded w-48 mx-auto animate-pulse"></div>
+          </div>
+        </div>
+      </section>
+    )
+  }
+  
+  // Get professional images
+  const professionalImages = getProfessionalImages('architect')
   
   const risks = [
     {
@@ -12,7 +67,7 @@ export default function SketchUpComplianceSection() {
       ),
       title: t('risks.financial.title'),
       description: t('risks.financial.description'),
-      highlight: "R$ 5.000 a R$ 20.000"
+      highlight: t('risks.financial.highlight')
     },
     {
       icon: (
@@ -59,10 +114,12 @@ export default function SketchUpComplianceSection() {
     <section className="py-20 px-4 md:px-6 lg:px-8 bg-gradient-to-b from-white to-orange-50 relative overflow-hidden">
       {/* Background Image */}
       <div className="absolute inset-0 opacity-5">
-        <img 
-          src="/images/brazil/archtectplanningoncomputer.jpg" 
-          alt="Arquiteto trabalhando"
-          className="w-full h-full object-cover"
+        <Image 
+          src={professionalImages[2]?.src || '/images/brazil/archtectplanningoncomputer.jpg'} 
+          alt={t('altText')}
+          fill
+          className="object-cover"
+          sizes="100vw"
         />
       </div>
       

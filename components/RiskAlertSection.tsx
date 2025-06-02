@@ -1,8 +1,63 @@
-import { useTranslations } from 'next-intl'
+
+
+
+'use client'
+
+import { useTranslations, useLocale } from 'next-intl'
 import Image from 'next/image'
+import { getBuildingsByLocale, getProfessionalImages } from '@/lib/imageConfig'
+import { useEffect, useState } from 'react'
 
 export default function RiskAlertSection() {
+  const [mounted, setMounted] = useState(false)
   const t = useTranslations('riskAlert')
+  const tExtra = useTranslations('riskAlertExtra')
+  const locale = useLocale()
+  
+  useEffect(() => {
+    setMounted(true)
+  }, [])
+  
+  if (!mounted) {
+    return (
+      <section className="py-16 px-4 md:px-6 lg:px-8 bg-gradient-to-r from-red-50 to-orange-50">
+        <div className="max-w-6xl mx-auto">
+          <div className="grid lg:grid-cols-3 gap-8 items-center">
+            <div className="grid grid-cols-2 gap-4">
+              <div className="relative h-32 rounded-xl overflow-hidden shadow-lg bg-gray-200 animate-pulse"></div>
+              <div className="relative h-32 rounded-xl overflow-hidden shadow-lg bg-gray-200 animate-pulse"></div>
+              <div className="col-span-2 relative h-40 rounded-xl overflow-hidden shadow-lg bg-gray-200 animate-pulse"></div>
+            </div>
+            <div className="lg:col-span-2">
+              <div className="bg-white rounded-2xl shadow-xl p-8 md:p-12 border-l-4 border-red-500">
+                <div className="flex flex-col md:flex-row items-center gap-6">
+                  <div className="flex-shrink-0">
+                    <div className="w-16 h-16 bg-red-100 rounded-full flex items-center justify-center">
+                      <div className="w-8 h-8 bg-red-200 rounded animate-pulse"></div>
+                    </div>
+                  </div>
+                  <div className="flex-1 text-center md:text-left">
+                    <div className="h-8 bg-gray-200 rounded mb-3 animate-pulse"></div>
+                    <div className="h-20 bg-gray-200 rounded mb-6 animate-pulse"></div>
+                    <div className="h-12 bg-gray-200 rounded inline-block animate-pulse w-48"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    )
+  }
+  
+  // Get locale-specific buildings and professional images
+  const buildings = getBuildingsByLocale(locale)
+  const professionalImages = getProfessionalImages()
+  
+  // Select images based on locale
+  const featuredBuilding = buildings[9] || buildings[0] // Palácio Itamaraty or fallback
+  const heroImage = professionalImages.find(img => img.category === 'hero') || professionalImages[0]
+  const engineerImage = professionalImages.find(img => img.category === 'engineer') || professionalImages[0]
   
   return (
     <section className="py-16 px-4 md:px-6 lg:px-8 bg-gradient-to-r from-red-50 to-orange-50">
@@ -12,8 +67,8 @@ export default function RiskAlertSection() {
           <div className="grid grid-cols-2 gap-4">
             <div className="relative h-32 rounded-xl overflow-hidden shadow-lg">
               <Image
-                src="/images/brazil/Palacio-Itamaraty-Itamaraty-Palace-28.5.2024.jpg"
-                alt="Palácio Itamaraty"
+                src={featuredBuilding.src}
+                alt={tExtra('altTexts.itamaraty')}
                 fill
                 className="object-cover"
                 sizes="25vw"
@@ -21,8 +76,8 @@ export default function RiskAlertSection() {
             </div>
             <div className="relative h-32 rounded-xl overflow-hidden shadow-lg">
               <Image
-                src="/images/brazil/Civil-Engineering-Hero-1600x900.jpg"
-                alt="Engenharia Civil"
+                src={heroImage?.src || '/images/brazil/Civil-Engineering-Hero-1600x900.jpg'}
+                alt={tExtra('altTexts.engineering')}
                 fill
                 className="object-cover"
                 sizes="25vw"
@@ -30,15 +85,15 @@ export default function RiskAlertSection() {
             </div>
             <div className="col-span-2 relative h-40 rounded-xl overflow-hidden shadow-lg">
               <Image
-                src="/images/brazil/civil-engineer.jpg"
-                alt="Engenheiro Civil"
+                src={engineerImage?.src || '/images/brazil/civil-engineer.jpg'}
+                alt={tExtra('altTexts.engineer')}
                 fill
                 className="object-cover"
                 sizes="50vw"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent"></div>
               <div className="absolute bottom-3 left-3 text-white">
-                <p className="text-sm font-medium">Profissionais construindo o futuro</p>
+                <p className="text-sm font-medium">{tExtra('altTexts.professionals')}</p>
               </div>
             </div>
           </div>

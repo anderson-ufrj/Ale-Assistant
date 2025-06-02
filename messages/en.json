@@ -1,27 +1,77 @@
 {
   "home": {
-    "title": "Software Compliance made simple",
-    "subtitle": "Understand your rights, avoid legal risks, and talk to our virtual assistant — Alê.",
-    "cta": "💬 Talk to Alê"
+    "title": "Software compliance without the headache",
+    "subtitle": "Understand your rights, avoid legal trouble, and chat with Alê — your compliance buddy.",
+    "cta": "💬 Chat with Alê now!"
   },
   "footer": {
     "developed": "Developed by Anderson Henrique da Silva",
     "copyright": "© 2025 Ale Assistant • All rights reserved",
-    "mission": "Promoting ethical and legal use of software in Brazil"
+    "mission": "Making software compliance simple and accessible worldwide"
   },
   "ale": {
-    "greeting": "Hello! I'm Alê, your virtual assistant.",
+    "greeting": "Hey there! I'm Alê, your virtual assistant.",
+    "status": "Online • Ready to help",
+    "welcome": "Hi! 😊 Want to learn how to keep your software legal and work worry-free? I'm here to help! First, what's your name?",
+    "namePlaceholder": "Type your name...",
+    "niceToMeet": "Nice to meet you, {{name}}! 🌟",
+    "askCompliance": "Have you heard about software compliance?",
+    "yes": "Yes",
+    "no": "No",
+    "noComplianceExplanation": "No worries! Compliance basically means using legal and licensed software. It's super important to protect your company! 💡",
+    "yesComplianceResponse": "Great! So you already know how important it is to keep everything in order. 👍",
+    "askCompany": "What's your company name?",
+    "companyPlaceholder": "Company name...",
+    "askRole": "What's your role in the company?",
+    "roleTech": "Technical/IT",
+    "roleManager": "Manager",
+    "roleAdmin": "Administrative",
+    "roleOther": "Other",
+    "askAlert": "Have you received any alerts or emails about software usage?",
+    "alertYes": "Yes, I have",
+    "alertNo": "No, I haven't",
+    "alertYesResponse": "I understand! It's super important to resolve this quickly. I'll help you! 🚀",
+    "alertNoResponse": "That's great! Let's keep it that way, with everything in order. 😊",
+    "askAuth": "Great, {{name}}! To continue helping you and send you a personalized report, you can identify yourself here:",
+    "authGoogleLabel": "Google",
+    "authMetaLabel": "Meta",
+    "authOrEmail": "or enter your email",
+    "emailPlaceholder": "your@email.com",
+    "loginWith": "Login with {{provider}}: {{email}}",
+    "authError": "Oops! Something went wrong. Can you try again?",
+    "askWhatsappMessage": "Perfect, {{name}}! If you prefer, I can assist you directly on WhatsApp. It's faster and more convenient! 😉",
+    "whatsappButton": "Continue on WhatsApp",
+    "whatsappPreferNumber": "I prefer to provide my number",
+    "whatsappAskNumber": "If you have WhatsApp, I can ask our team to contact you directly. What's your number?",
+    "whatsappPlaceholder": "+1 (555) 123-4567",
+    "whatsappRedirectMessage": "I've redirected you to WhatsApp! Our team will contact you soon. 📱",
+    "whatsappDefaultMessage": "Hi, I'm {{name}} from {{company}}. I talked to Alê and want to know more about compliance.",
+    "messagePlaceholder": "Type your message...",
+    "finalNoProblem": "No problem! I can continue helping you right here.",
+    "finalHereToHelp": "If you have any questions, just ask me. I'm always online. 💡",
+    "askWhatsapp": "To have our team reach out and help you better, could you share your WhatsApp?",
+    "askConsent": "Before we continue, I need your permission to use your data only for guidance on original software, is that okay?",
+    "consentText": "Your data will only be used for software licensing guidance, according to our Privacy Policy.",
+    "accept": "I agree",
+    "decline": "I'd rather not",
+    "consentAccepted": "I authorize the use of my data",
+    "consentDeclined": "I prefer not to authorize",
+    "thankYouBusiness": "Perfect! 🎉 Our team is available now and will contact you shortly to help with regularization.",
+    "thankYouAfterHours": "Thanks! 🌙 I've received your information. Our team is out of office (9am-6pm), but we'll contact you as soon as possible!",
+    "understandDecline": "No problem! If you change your mind, I'll be here to help. You can explore our website to learn more about original software.",
+    "errorSaving": "Oops! I had a little problem saving your information. Can you try again?",
+    "initializing": "Getting everything ready for you",
+    "close": "Close chat",
     "authTitle": "To continue, please sign in",
-    "authGoogle": "Sign in with Google",
-    "authMeta": "Sign in with Facebook",
-    "formTitle": "Almost there! Complete your information",
+    "authGoogle": "Continue with Google",
+    "authMeta": "Continue with Facebook",
+    "formTitle": "Almost there! Complete your details",
     "formWhatsApp": "WhatsApp (optional)",
     "formLanguage": "Preferred language",
     "consentTitle": "Privacy Consent",
-    "consentText": "I agree to the processing of my personal data for communication purposes about Software Compliance.",
-    "submitButton": "Submit",
-    "successMessage": "Thank you! We'll be in touch soon.",
-    "outOfHoursMessage": "Thank you! Our team is currently out of office hours. We'll contact you as soon as possible.",
+    "submitButton": "Send",
+    "successMessage": "Thanks! We'll reach out soon.",
+    "outOfHoursMessage": "Thanks! Our team is currently offline. We'll contact you as soon as we're back.",
     "errorMessage": "Oops! Something went wrong. Please try again."
   },
   "languages": {
@@ -33,64 +83,140 @@
     "selectLanguage": "Select language"
   },
   "riskAlert": {
-    "title": "Don't put yourself and your client at risk.",
-    "description": "Using unlicensed software can result in fines, lawsuits, and damage to your company's reputation. But most importantly: it compromises the trust your client places in you. Adopting Software Compliance is an ethical, preventive, and professional approach.",
-    "button": "How to protect yourself"
+    "title": "Protect your business and your clients",
+    "description": "Using licensed software shows professionalism and respect for intellectual property. Beyond avoiding legal risks, you ensure access to technical support, security updates, and build a solid market reputation.",
+    "button": "Learn how to regularize"
   },
   "compliance": {
-    "title": "About Software Compliance",
-    "description": "Software Compliance means using programs according to their licenses, respecting copyrights and intellectual property. It's an essential practice for companies that value ethics, security, and sustainability.",
+    "title": "What is Software Compliance?",
+    "description": "Software Compliance means using programs according to their licenses, respecting copyrights and intellectual property. It's essential for businesses that value ethics, security, and sustainability.",
     "learnMore": "Learn more",
     "features": {
       "legal": {
-        "title": "Legal Compliance",
-        "description": "Avoid fines and lawsuits by keeping your licenses up to date and documented."
+        "title": "Legal Protection",
+        "description": "Avoid costly fines and lawsuits by keeping your licenses current and properly documented."
       },
       "security": {
-        "title": "Guaranteed Security",
-        "description": "Original software receives security updates, protecting your data and systems."
+        "title": "Enhanced Security",
+        "description": "Licensed software receives regular security patches, protecting your valuable data and systems."
       },
       "reputation": {
-        "title": "Business Reputation",
-        "description": "Demonstrate professionalism and ethics, strengthening trust with clients and partners."
+        "title": "Professional Credibility",
+        "description": "Show clients and partners you run an ethical business they can trust."
       }
     }
   },
   "sketchup": {
-    "title": "SketchUp for Architects and Engineers",
-    "subtitle": "Since 2018, Trimble has intensified anti-piracy actions in Brazil. Architecture and engineering offices are being notified and fined daily.",
+    "title": "SketchUp for Architecture Professionals",
+    "subtitle": "Work with peace of mind and legal security. Our specialized team helps you regularize your licenses in a simple and affordable way.",
     "itca": {
-      "title": "⚠️ WARNING: ITCA is active in Brazil",
-      "description": "ITCA (IT Compliance Association) was hired by Trimble to identify irregular use of SketchUp. They have integrated technology that automatically detects unlicensed copies, even in small offices with less than 5 employees."
+      "title": "📋 Regularization Program",
+      "description": "Trimble, SketchUp's developer, offers special regularization programs for professionals and companies. Our team is ready to guide you through this process, ensuring the best benefits and conditions."
     },
     "risks": {
       "financial": {
-        "title": "Heavy Fines",
-        "description": "Amounts applied by ITCA vary according to the number of machines identified. Additionally, attorney fees can increase the final amount by up to 50%.",
-        "highlight": "R$ 5,000 to R$ 20,000"
+        "title": "Smart Investment",
+        "description": "The cost of an original license is much lower than potential forced regularization costs. Plan ahead and protect your budget.",
+        "highlight": "$2,000 to $8,000"
       },
       "legal": {
-        "title": "Criminal Consequences",
-        "description": "In Brazil, copyright violation results in compensation payment and can lead to imprisonment. The law provides for search and seizure of pirated copies.",
-        "highlight": "Damages up to 3,000x the value"
+        "title": "Legal Security",
+        "description": "Work peacefully knowing you're compliant with intellectual property and copyright laws.",
+        "highlight": "Guaranteed compliance"
       },
       "professional": {
-        "title": "Reputation at Risk",
-        "description": "Companies caught with pirated software lose market credibility and may be prevented from participating in public tenders.",
-        "highlight": "Loss of public contracts"
+        "title": "Market Credibility",
+        "description": "Companies that respect software licenses demonstrate professionalism and earn client and partner trust.",
+        "highlight": "Competitive advantage"
       }
     },
     "benefits": {
       "title": "Benefits of Original SketchUp",
       "support": "Official technical support",
-      "updates": "Constant updates",
+      "updates": "Regular updates",
       "cloud": "Trimble Connect (cloud)",
       "certification": "Compliance certificate"
     },
     "cta": {
       "text": "Our specialized team is ready to help you regularize your situation",
-      "button": "Regularize Now",
-      "hours": "Service: Monday to Friday, 9am to 6pm"
+      "button": "Get Started Now",
+      "hours": "Support: Monday to Friday, 9am to 6pm"
+    },
+    "altText": "Architect working"
+  },
+  "complianceExtra": {
+    "sectionTitle": "American Architecture Tradition and Innovation",
+    "sectionDescription": "From Frank Lloyd Wright's Prairie School to today's modern offices, American architecture has always stood out for creativity and innovation. To maintain this excellence, it's essential to work with licensed tools.",
+    "stats": {
+      "tradition": "150+ years",
+      "traditionLabel": "Of architectural tradition",
+      "vanguard": "Leadership",
+      "vanguardLabel": "Global design leader"
+    },
+    "altTexts": {
+      "pampulha": "Modern American Building - External View",
+      "heritage": "UNESCO World Heritage",
+      "architect": "Architect on computer",
+      "office": "Architecture office"
     }
+  },
+  "riskAlertExtra": {
+    "altTexts": {
+      "itamaraty": "Modern American Building",
+      "engineering": "Civil Engineering",
+      "engineer": "Civil Engineer",
+      "professionals": "Professionals building the future"
+    }
+  },
+  "architecture": {
+    "gallery": {
+      "title": "Inspiration from Modern American Architecture",
+      "description": "Just like the great masters of American architecture revolutionized the world with their organic and innovative forms, we help you build a solid and legal foundation for your creative work.",
+      "cta": {
+        "title": "Work with Peace of Mind",
+        "description": "Architects and engineers using licensed software have access to exclusive resources, technical support, and constant updates that enhance their creativity.",
+        "button": "Get Legal Now"
+      },
+      "altText": "Architect planning on computer"
+    },
+    "brazilian": {
+      "title": "Inspiration from Modern American Architecture",
+      "description": "Just like American architecture revolutionized the world with its organic and innovative forms, we help you build a solid and legal foundation for your creative work.",
+      "professionals": {
+        "title": "Professionals Building the Future",
+        "description": "American architects and engineers are among the most creative and innovative in the world. To maintain this excellence, it's essential to work with licensed tools that guarantee security, support, and constant updates.",
+        "stats": {
+          "offices": "+5,000",
+          "officesLabel": "Regularized offices",
+          "security": "100%",
+          "securityLabel": "Legal security"
+        }
+      },
+      "altOffice": "Architecture office"
+    }
+  },
+  "buildGreat": {
+    "title": "Build Great Things",
+    "subtitle": "with Confidence",
+    "description": "From Frank Lloyd Wright's Fallingwater to today's most modern works, great American architects have always built with reliable and licensed tools. Be part of this tradition of excellence and innovation.",
+    "cta": {
+      "title": "Be Part of American Architecture History",
+      "description": "Great projects require reliable tools. Use licensed software and build the future of American architecture with legal security and complete technical support.",
+      "button": "🚀 Start Now",
+      "features": {
+        "legal": "100% Legal",
+        "support": "Technical Support",
+        "updates": "Updates"
+      }
+    }
+  },
+  "errors": {
+    "title": "Oops! Something went wrong",
+    "description": "We encountered an unexpected error. Please try reloading the page.",
+    "reload": "Reload page"
+  },
+  "header": {
+    "logo": "Alê",
+    "subtitle": "Assistant"
   }
 }

@@ -1,12 +1,4 @@
-import { Inter } from 'next/font/google'
-import '../styles/globals.css'
-
-const inter = Inter({ subsets: ['latin'] })
-
-export const metadata = {
-  title: 'Ale Assistant - Software Compliance',
-  description: 'Plataforma ética e educativa sobre Software Compliance',
-}
+import '@/styles/globals.css'
 
 export default function RootLayout({
   children,

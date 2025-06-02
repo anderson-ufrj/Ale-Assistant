@@ -15,6 +15,40 @@
     "welcome": "Oi! 😊 Quer saber como regularizar seu software e trabalhar com tranquilidade? Vou te ajudar! Primeiro, como posso te chamar?",
     "namePlaceholder": "Digite seu nome...",
     "niceToMeet": "Prazer em conhecer você, {{name}}! 🌟",
+    "askCompliance": "Você já ouviu falar sobre compliance em software?",
+    "yes": "Sim",
+    "no": "Não",
+    "noComplianceExplanation": "Sem problemas! Compliance é basicamente usar software legal e licenciado. É super importante para proteger sua empresa! 💡",
+    "yesComplianceResponse": "Ótimo! Então você já sabe como é importante manter tudo certinho. 👍",
+    "askCompany": "Qual o nome da sua empresa?",
+    "companyPlaceholder": "Nome da empresa...",
+    "askRole": "Qual é o seu papel na empresa?",
+    "roleTech": "Técnico/TI",
+    "roleManager": "Gestor",
+    "roleAdmin": "Administrativo",
+    "roleOther": "Outro",
+    "askAlert": "Você recebeu algum alerta ou e-mail sobre uso de software?",
+    "alertYes": "Sim, recebi",
+    "alertNo": "Não recebi",
+    "alertYesResponse": "Entendi! É super importante resolver isso rapidamente. Vou te ajudar! 🚀",
+    "alertNoResponse": "Que bom! Vamos manter assim, com tudo em ordem. 😊",
+    "askAuth": "Legal, {{name}}! Pra continuar te ajudando e te enviar um relatório personalizado, você pode se identificar por aqui:",
+    "authGoogleLabel": "Google",
+    "authMetaLabel": "Meta",
+    "authOrEmail": "ou digite seu e-mail",
+    "emailPlaceholder": "seu@email.com",
+    "loginWith": "Login com {{provider}}: {{email}}",
+    "authError": "Ops! Algo deu errado. Pode tentar novamente?",
+    "askWhatsappMessage": "Perfeito, {{name}}! Se preferir, posso te atender diretamente no WhatsApp. É mais rápido e prático! 😉",
+    "whatsappButton": "Continuar no WhatsApp",
+    "whatsappPreferNumber": "Prefiro informar meu número",
+    "whatsappAskNumber": "Se tiver seu WhatsApp, posso pedir para nossa equipe entrar em contato diretamente. Qual seu número?",
+    "whatsappPlaceholder": "+55 11 99999-9999",
+    "whatsappRedirectMessage": "Redirecionei você para o WhatsApp! Nossa equipe vai te atender em breve. 📱",
+    "whatsappDefaultMessage": "Oi, sou {{name}} da empresa {{company}}. Conversei com a Alê e quero saber mais sobre compliance.",
+    "messagePlaceholder": "Digite sua mensagem...",
+    "finalNoProblem": "Sem problemas! Posso continuar por aqui mesmo.",
+    "finalHereToHelp": "Se tiver qualquer dúvida, é só me chamar. Estou sempre online. 💡",
     "askWhatsapp": "Para nossa equipe entrar em contato e te ajudar melhor, pode compartilhar seu WhatsApp?",
     "askConsent": "Antes de continuarmos, preciso da sua autorização para usar seus dados apenas para orientação sobre software original, tudo bem?",
     "consentText": "Seus dados serão usados apenas para orientação sobre licenças de software, conforme nossa Política de Privacidade e a LGPD.",
@@ -83,7 +117,7 @@
       "financial": {
         "title": "Investimento Inteligente",
         "description": "O valor de uma licença original é muito menor que os custos de uma eventual regularização forçada. Planeje-se e proteja seu orçamento.",
-        "highlight": "Economia a longo prazo"
+        "highlight": "R$ 5.000 a R$ 20.000"
       },
       "legal": {
         "title": "Segurança Jurídica",
@@ -107,6 +141,82 @@
       "text": "Nossa equipe especializada está pronta para ajudar você a regularizar sua situação",
       "button": "Regularize Agora",
       "hours": "Atendimento: Segunda a Sexta, 9h às 18h"
+    },
+    "altText": "Arquiteto trabalhando"
+  },
+  "complianceExtra": {
+    "sectionTitle": "Tradição e Inovação da Arquitetura Brasileira",
+    "sectionDescription": "Desde a Igreja da Pampulha de Niemeyer até os escritórios modernos de hoje, a arquitetura brasileira sempre se destacou pela criatividade e inovação. Para manter essa excelência, é fundamental trabalhar com ferramentas legalizadas.",
+    "stats": {
+      "tradition": "80+ anos",
+      "traditionLabel": "De tradição arquitetônica",
+      "vanguard": "Vanguarda",
+      "vanguardLabel": "Mundial em design"
+    },
+    "altTexts": {
+      "pampulha": "Igreja da Pampulha - Visão Externa",
+      "heritage": "Patrimônio Mundial UNESCO",
+      "architect": "Arquiteto no computador",
+      "office": "Escritório de arquitetura"
     }
+  },
+  "riskAlertExtra": {
+    "altTexts": {
+      "itamaraty": "Palácio Itamaraty",
+      "engineering": "Engenharia Civil",
+      "engineer": "Engenheiro Civil",
+      "professionals": "Profissionais construindo o futuro"
+    }
+  },
+  "architecture": {
+    "gallery": {
+      "title": "Inspiração na Arquitetura Moderna Brasileira",
+      "description": "Assim como os grandes mestres da arquitetura brasileira revolucionaram o mundo com suas formas orgânicas e inovadoras, ajudamos você a construir uma base sólida e legal para seu trabalho criativo.",
+      "cta": {
+        "title": "Trabalhe com Tranquilidade",
+        "description": "Arquitetos e engenheiros que utilizam software licenciado têm acesso a recursos exclusivos, suporte técnico e atualizações constantes que potencializam sua criatividade.",
+        "button": "Regularize Agora"
+      },
+      "altText": "Arquiteto planejando no computador"
+    },
+    "brazilian": {
+      "title": "Inspiração na Arquitetura Moderna Brasileira",
+      "description": "Assim como a arquitetura brasileira revolucionou o mundo com suas formas orgânicas e inovadoras, ajudamos você a construir uma base sólida e legal para seu trabalho criativo.",
+      "professionals": {
+        "title": "Profissionais que Constroem o Futuro",
+        "description": "Arquitetos e engenheiros brasileiros estão entre os mais criativos e inovadores do mundo. Para manter essa excelência, é fundamental trabalhar com ferramentas legalizadas que garantam segurança, suporte e atualizações constantes.",
+        "stats": {
+          "offices": "+5.000",
+          "officesLabel": "Escritórios regularizados",
+          "security": "100%",
+          "securityLabel": "Segurança jurídica"
+        }
+      },
+      "altOffice": "Escritório de arquitetura"
+    }
+  },
+  "buildGreat": {
+    "title": "Construa Coisas Grandes",
+    "subtitle": "com Confiança",
+    "description": "Desde a Igreja da Pampulha até as obras mais modernas, os grandes arquitetos brasileiros sempre construíram com ferramentas confiáveis e legalizadas. Faça parte dessa tradição de excelência e inovação.",
+    "cta": {
+      "title": "Seja Parte da História da Arquitetura Brasileira",
+      "description": "Grandes projetos exigem ferramentas confiáveis. Use software licenciado e construa o futuro da arquitetura brasileira com segurança jurídica e suporte técnico completo.",
+      "button": "🚀 Comece Agora",
+      "features": {
+        "legal": "100% Legal",
+        "support": "Suporte Técnico",
+        "updates": "Atualizações"
+      }
+    }
+  },
+  "errors": {
+    "title": "Ops! Algo deu errado",
+    "description": "Encontramos um erro inesperado. Por favor, tente recarregar a página.",
+    "reload": "Recarregar página"
+  },
+  "header": {
+    "logo": "Alê",
+    "subtitle": "Assistant"
   }
 }

@@ -67,3 +67,8 @@ serviceAccountKey.json
 CLAUDE.md
 *claude*
 *Claude*
+
+# Scripts locais
+test-local.sh
+start-dev.sh
+fix-permissions.sh

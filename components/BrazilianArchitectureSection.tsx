@@ -2,43 +2,18 @@
 
 import { motion } from 'framer-motion'
 import Image from 'next/image'
-import { useTranslations } from 'next-intl'
-
-const architectureImages = [
-  {
-    src: '/images/brazil/Catedral-Metropolitana-Nossa-Senhora-Aparecida-Cathedral-of-Brasilia-28.5.2024.jpg',
-    title: 'Catedral de Brasília',
-    architect: 'Oscar Niemeyer'
-  },
-  {
-    src: '/images/brazil/Museum-of-Tomorrow-Museu-do-Amanha-28.5.2024.jpg',
-    title: 'Museu do Amanhã',
-    architect: 'Santiago Calatrava'
-  },
-  {
-    src: '/images/brazil/Niteroi-Contemporary-Art-Museum-Museu-de-Arte-Contemporanea-de-Niteroi-28.5.2024.jpg',
-    title: 'MAC Niterói',
-    architect: 'Oscar Niemeyer'
-  },
-  {
-    src: '/images/brazil/Brazilian-Congress-Building-Palacio-do-Congresso-Nacional-28.5.2024.jpg',
-    title: 'Congresso Nacional',
-    architect: 'Oscar Niemeyer'
-  },
-  {
-    src: '/images/brazil/Palacio-Itamaraty-28.5.2024-.jpg',
-    title: 'Palácio Itamaraty',
-    architect: 'Oscar Niemeyer'
-  },
-  {
-    src: '/images/brazil/Church-of-Saint-Francis-of-Assisi-Igreja-de-Sao-Francisco-de-Assis-28.5.2024.jpg',
-    title: 'Igreja da Pampulha',
-    architect: 'Oscar Niemeyer'
-  }
-]
+import { useTranslations, useLocale } from 'next-intl'
+import { getBuildingsByLocale, getProfessionalImages } from '@/lib/imageConfig'
 
 export default function BrazilianArchitectureSection() {
-  const t = useTranslations('architecture')
+  const t = useTranslations('architecture.brazilian')
+  const locale = useLocale()
+  
+  // Get architecture images based on current locale
+  const architectureImages = getBuildingsByLocale(locale)
+  
+  // Get professional images (these remain the same across all locales)
+  const professionalImages = getProfessionalImages('office')
   
   return (
     <section className="py-20 px-4 md:px-6 lg:px-8 bg-gradient-to-b from-gray-50 to-white">
@@ -50,17 +25,16 @@ export default function BrazilianArchitectureSection() {
           className="text-center mb-12"
         >
           <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-            Inspiração na Arquitetura Moderna Brasileira
+            {t('title')}
           </h2>
           <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-            Assim como a arquitetura brasileira revolucionou o mundo com suas formas orgânicas e inovadoras, 
-            ajudamos você a construir uma base sólida e legal para seu trabalho criativo.
+            {t('description')}
           </p>
         </motion.div>
 
         {/* Image Gallery */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {architectureImages.map((image, index) => (
+          {architectureImages.slice(0, 6).map((image, index) => (
             <motion.div
               key={index}
               initial={{ opacity: 0, y: 20 }}
@@ -72,7 +46,7 @@ export default function BrazilianArchitectureSection() {
               <div className="relative h-64 overflow-hidden">
                 <Image
                   src={image.src}
-                  alt={image.title}
+                  alt={`${image.title} - ${image.architect}`}
                   fill
                   className="object-cover group-hover:scale-110 transition-transform duration-500"
                 />
@@ -80,6 +54,7 @@ export default function BrazilianArchitectureSection() {
                   <div className="absolute bottom-4 left-4 text-white">
                     <h3 className="text-xl font-bold">{image.title}</h3>
                     <p className="text-sm opacity-90">{image.architect}</p>
+                    <p className="text-xs opacity-75">{image.location} • {image.year}</p>
                   </div>
                 </div>
               </div>
@@ -96,29 +71,27 @@ export default function BrazilianArchitectureSection() {
         >
           <div className="relative h-96 rounded-3xl overflow-hidden shadow-2xl">
             <Image
-              src="/images/brazil/studio.jpeg"
-              alt="Escritório de arquitetura"
+              src={professionalImages[0]?.src || '/images/brazil/studio.jpeg'}
+              alt={t('altOffice')}
               fill
               className="object-cover"
             />
           </div>
           <div>
             <h3 className="text-2xl font-bold text-gray-900 mb-4">
-              Profissionais que Constroem o Futuro
+              {t('professionals.title')}
             </h3>
             <p className="text-gray-600 mb-6 leading-relaxed">
-              Arquitetos e engenheiros brasileiros estão entre os mais criativos e inovadores do mundo. 
-              Para manter essa excelência, é fundamental trabalhar com ferramentas legalizadas que 
-              garantam segurança, suporte e atualizações constantes.
+              {t('professionals.description')}
             </p>
             <div className="grid grid-cols-2 gap-4">
               <div className="bg-orange-50 p-4 rounded-xl">
-                <h4 className="font-semibold text-orange-900 mb-1">+5.000</h4>
-                <p className="text-sm text-orange-700">Escritórios regularizados</p>
+                <h4 className="font-semibold text-orange-900 mb-1">{t('professionals.stats.offices')}</h4>
+                <p className="text-sm text-orange-700">{t('professionals.stats.officesLabel')}</p>
               </div>
               <div className="bg-blue-50 p-4 rounded-xl">
-                <h4 className="font-semibold text-blue-900 mb-1">100%</h4>
-                <p className="text-sm text-blue-700">Segurança jurídica</p>
+                <h4 className="font-semibold text-blue-900 mb-1">{t('professionals.stats.security')}</h4>
+                <p className="text-sm text-blue-700">{t('professionals.stats.securityLabel')}</p>
               </div>
             </div>
           </div>

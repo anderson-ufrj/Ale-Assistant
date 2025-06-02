@@ -2,12 +2,14 @@
 
 import Image from 'next/image'
 import { motion } from 'framer-motion'
-import { useLocale } from 'next-intl'
+import { useTranslations, useLocale } from 'next-intl'
 import { getBuildingsWithFallback } from '@/lib/imageConfig'
 
 export default function BuildGreatThingsSection() {
+  const t = useTranslations('buildGreat')
   const locale = useLocale()
   const famousBuildings = getBuildingsWithFallback(locale)
+  
   return (
     <section className="py-20 px-4 md:px-6 lg:px-8 bg-gradient-to-br from-emerald-50 via-green-50 to-amber-50 relative overflow-hidden">
       {/* Background Pattern - Organic Green */}
@@ -26,21 +28,19 @@ export default function BuildGreatThingsSection() {
           className="text-center mb-16"
         >
           <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 bg-gradient-to-r from-orange-600 via-orange-500 to-amber-600 bg-clip-text text-transparent">
-            Construa Coisas Grandes
+            {t('title')}
           </h2>
           <h3 className="text-3xl md:text-4xl font-bold mb-8 text-gray-800">
-            com Confiança
+            {t('subtitle')}
           </h3>
           <p className="text-xl text-gray-700 max-w-4xl mx-auto leading-relaxed">
-            Desde a Igreja da Pampulha até as obras mais modernas, os grandes arquitetos brasileiros 
-            sempre construíram com ferramentas confiáveis e legalizadas. Faça parte dessa tradição 
-            de excelência e inovação.
+            {t('description')}
           </p>
         </motion.div>
 
         {/* Buildings Gallery */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
-          {famousBuildings.map((building, index) => (
+          {famousBuildings.slice(0, 6).map((building, index) => (
             <motion.div
               key={index}
               initial={{ opacity: 0, y: 20 }}
@@ -52,7 +52,7 @@ export default function BuildGreatThingsSection() {
               <div className="relative h-64 overflow-hidden">
                 <Image
                   src={building.src}
-                  alt={building.title}
+                  alt={`${building.title} - ${building.architect}`}
                   fill
                   className="object-cover group-hover:scale-110 transition-transform duration-700"
                   sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
@@ -88,11 +88,10 @@ export default function BuildGreatThingsSection() {
         >
           <div className="bg-gradient-to-r from-orange-500/20 to-orange-600/20 backdrop-blur-sm border border-orange-400/30 rounded-3xl p-12">
             <h3 className="text-2xl md:text-3xl font-bold mb-6 text-gray-800">
-              Seja Parte da História da Arquitetura Brasileira
+              {t('cta.title')}
             </h3>
             <p className="text-lg text-gray-700 mb-8 max-w-3xl mx-auto">
-              Grandes projetos exigem ferramentas confiáveis. Use software licenciado e construa 
-              o futuro da arquitetura brasileira com segurança jurídica e suporte técnico completo.
+              {t('cta.description')}
             </p>
             
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
@@ -105,21 +104,21 @@ export default function BuildGreatThingsSection() {
                 }}
                 className="bg-gradient-to-r from-orange-500 to-orange-600 text-white px-8 py-4 rounded-xl font-semibold text-lg shadow-lg hover:shadow-xl transition-all duration-300"
               >
-                🚀 Comece Agora
+                {t('cta.button')}
               </motion.button>
               
               <div className="flex items-center gap-6 text-sm text-gray-600">
                 <div className="flex items-center gap-2">
                   <div className="w-3 h-3 bg-green-400 rounded-full"></div>
-                  <span>100% Legal</span>
+                  <span>{t('cta.features.legal')}</span>
                 </div>
                 <div className="flex items-center gap-2">
                   <div className="w-3 h-3 bg-blue-400 rounded-full"></div>
-                  <span>Suporte Técnico</span>
+                  <span>{t('cta.features.support')}</span>
                 </div>
                 <div className="flex items-center gap-2">
                   <div className="w-3 h-3 bg-purple-400 rounded-full"></div>
-                  <span>Atualizações</span>
+                  <span>{t('cta.features.updates')}</span>
                 </div>
               </div>
             </div>

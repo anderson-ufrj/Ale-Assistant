@@ -14,7 +14,14 @@ export default async function LocaleLayout({
   params: Promise<{ locale: string }>
 }) {
   const { locale } = await params
-  const messages = await getMessages()
+  
+  // Validate locale
+  const validLocales = ['pt', 'en', 'es']
+  if (!validLocales.includes(locale)) {
+    notFound()
+  }
+  
+  const messages = await getMessages({ locale })
 
   if (!messages) {
     notFound()
@@ -23,7 +30,7 @@ export default async function LocaleLayout({
   return (
     <html lang={locale}>
       <body className={inter.className}>
-        <NextIntlClientProvider messages={messages}>
+        <NextIntlClientProvider locale={locale} messages={messages}>
           {children}
         </NextIntlClientProvider>
       </body>

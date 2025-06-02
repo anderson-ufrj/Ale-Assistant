@@ -1,8 +1,66 @@
-import { useTranslations } from 'next-intl'
+'use client'
+
+import { useTranslations, useLocale } from 'next-intl'
 import Image from 'next/image'
+import { getBuildingsByLocale, getProfessionalImages } from '@/lib/imageConfig'
+import { useEffect, useState } from 'react'
 
 export default function ComplianceSection() {
+  const [mounted, setMounted] = useState(false)
   const t = useTranslations('compliance')
+  const tExtra = useTranslations('complianceExtra')
+  const locale = useLocale()
+  
+  useEffect(() => {
+    setMounted(true)
+  }, [])
+  
+  if (!mounted) {
+    return (
+      <section className="py-16 px-4 md:px-6 lg:px-8 bg-white">
+        <div className="max-w-6xl mx-auto">
+          <div className="text-center mb-12">
+            <div className="h-12 bg-gray-200 rounded mb-4 animate-pulse"></div>
+            <div className="h-6 bg-gray-200 rounded max-w-3xl mx-auto animate-pulse"></div>
+          </div>
+          <div className="grid md:grid-cols-3 gap-8 mt-12">
+            {[1,2,3].map((i) => (
+              <div key={i} className="text-center">
+                <div className="w-16 h-16 bg-gray-200 rounded-full mx-auto mb-4 animate-pulse"></div>
+                <div className="h-6 bg-gray-200 rounded mb-2 animate-pulse"></div>
+                <div className="h-16 bg-gray-200 rounded animate-pulse"></div>
+              </div>
+            ))}
+          </div>
+          <div className="mt-20 grid md:grid-cols-2 gap-12 items-center">
+            <div className="grid grid-cols-2 gap-4">
+              <div className="col-span-2 relative h-64 rounded-2xl bg-gray-200 animate-pulse"></div>
+              <div className="relative h-32 rounded-xl bg-gray-200 animate-pulse"></div>
+              <div className="relative h-32 rounded-xl bg-gray-200 animate-pulse"></div>
+            </div>
+            <div>
+              <div className="h-8 bg-gray-200 rounded mb-4 animate-pulse"></div>
+              <div className="h-24 bg-gray-200 rounded mb-6 animate-pulse"></div>
+              <div className="grid grid-cols-2 gap-4 mb-6">
+                <div className="bg-gray-200 p-4 rounded-xl animate-pulse h-20"></div>
+                <div className="bg-gray-200 p-4 rounded-xl animate-pulse h-20"></div>
+              </div>
+            </div>
+          </div>
+          <div className="mt-12 text-center">
+            <div className="h-12 bg-gray-200 rounded w-40 mx-auto animate-pulse"></div>
+          </div>
+        </div>
+      </section>
+    )
+  }
+  
+  // Get one featured building for this locale
+  const buildings = getBuildingsByLocale(locale)
+  const featuredBuilding = buildings[3] || buildings[0] // Use Igreja da Pampulha (index 3) or fallback
+  
+  // Get professional images
+  const professionalImages = getProfessionalImages()
   
   const features = [
     {
@@ -65,27 +123,27 @@ export default function ComplianceSection() {
         {/* Image Gallery Section */}
         <div className="mt-20 grid md:grid-cols-2 gap-12 items-center">
           <div className="grid grid-cols-2 gap-4">
-            {/* Igreja da Pampulha - Imagem alternativa */}
+            {/* Featured Building */}
             <div className="col-span-2 relative h-64 rounded-2xl overflow-hidden shadow-xl">
               <Image
-                src="/images/brazil/igreja-pampulha-780x520.jpg"
-                alt="Igreja da Pampulha - Visão Externa"
+                src={featuredBuilding.src}
+                alt={tExtra('altTexts.pampulha')}
                 fill
                 className="object-cover"
                 sizes="(max-width: 768px) 100vw, 50vw"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
               <div className="absolute bottom-4 left-4 text-white">
-                <h4 className="text-lg font-bold">Igreja da Pampulha</h4>
-                <p className="text-sm opacity-90">Patrimônio Mundial UNESCO</p>
+                <h4 className="text-lg font-bold">{featuredBuilding.title}</h4>
+                <p className="text-sm opacity-90">{tExtra('altTexts.heritage')}</p>
               </div>
             </div>
             
             {/* Secondary Images */}
             <div className="relative h-32 rounded-xl overflow-hidden shadow-lg">
               <Image
-                src="/images/brazil/architectoncomputer.webp"
-                alt="Arquiteto no computador"
+                src={professionalImages[1]?.src || '/images/brazil/architectoncomputer.webp'}
+                alt={tExtra('altTexts.architect')}
                 fill
                 className="object-cover"
                 sizes="25vw"
@@ -93,8 +151,8 @@ export default function ComplianceSection() {
             </div>
             <div className="relative h-32 rounded-xl overflow-hidden shadow-lg">
               <Image
-                src="/images/brazil/studio.jpeg"
-                alt="Escritório de arquitetura"
+                src={professionalImages[6]?.src || '/images/brazil/studio.jpeg'}
+                alt={tExtra('altTexts.office')}
                 fill
                 className="object-cover"
                 sizes="25vw"
@@ -104,21 +162,19 @@ export default function ComplianceSection() {
           
           <div>
             <h3 className="text-2xl font-bold text-gray-900 mb-4">
-              Tradição e Inovação da Arquitetura Brasileira
+              {tExtra('sectionTitle')}
             </h3>
             <p className="text-gray-600 mb-6 leading-relaxed">
-              Desde a Igreja da Pampulha de Niemeyer até os escritórios modernos de hoje, 
-              a arquitetura brasileira sempre se destacou pela criatividade e inovação. 
-              Para manter essa excelência, é fundamental trabalhar com ferramentas legalizadas.
+              {tExtra('sectionDescription')}
             </p>
             <div className="grid grid-cols-2 gap-4 mb-6">
               <div className="bg-orange-50 p-4 rounded-xl">
-                <h4 className="font-semibold text-orange-900 mb-1">80+ anos</h4>
-                <p className="text-sm text-orange-700">De tradição arquitetônica</p>
+                <h4 className="font-semibold text-orange-900 mb-1">{tExtra('stats.tradition')}</h4>
+                <p className="text-sm text-orange-700">{tExtra('stats.traditionLabel')}</p>
               </div>
               <div className="bg-blue-50 p-4 rounded-xl">
-                <h4 className="font-semibold text-blue-900 mb-1">Vanguarda</h4>
-                <p className="text-sm text-blue-700">Mundial em design</p>
+                <h4 className="font-semibold text-blue-900 mb-1">{tExtra('stats.vanguard')}</h4>
+                <p className="text-sm text-blue-700">{tExtra('stats.vanguardLabel')}</p>
               </div>
             </div>
           </div>

@@ -1,3 +1,5 @@
+
+
 'use client'
 
 import { useTranslations, useLocale } from 'next-intl'
@@ -155,7 +157,7 @@ export default function Hero({ variant = 'with-images', showCta = true }: HeroPr
                   <div className="absolute inset-0 bg-gradient-to-r from-white/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                   <div className="relative flex items-center gap-3">
                     <span className="text-2xl animate-bounce">💬</span>
-                    <span>Fale com Alê agora!</span>
+                    <span>{t('cta').replace('💬 ', '')}</span>
                     <svg className="w-6 h-6 group-hover:translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
                     </svg>
@@ -165,10 +167,10 @@ export default function Hero({ variant = 'with-images', showCta = true }: HeroPr
                 <div className="mt-4 flex flex-wrap gap-3">
                   <span className="inline-flex items-center gap-1 text-sm text-green-600 font-medium">
                     <span className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></span>
-                    Online agora
+                    {locale === 'en' ? 'Online now' : locale === 'es' ? 'En línea ahora' : 'Online agora'}
                   </span>
-                  <span className="text-sm text-gray-500">• ✓ Sem compromisso</span>
-                  <span className="text-sm text-gray-500">• ✓ LGPD Compliant</span>
+                  <span className="text-sm text-gray-500">• ✓ {locale === 'en' ? 'No commitment' : locale === 'es' ? 'Sin compromiso' : 'Sem compromisso'}</span>
+                  <span className="text-sm text-gray-500">• ✓ {locale === 'en' ? 'Privacy compliant' : locale === 'es' ? 'Cumple con privacidad' : 'LGPD Compliant'}</span>
                 </div>
               </div>
             )}

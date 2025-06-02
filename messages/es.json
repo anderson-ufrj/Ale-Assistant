@@ -1,27 +1,78 @@
 {
+
   "home": {
-    "title": "Cumplimiento de Software sin complicaciones",
-    "subtitle": "Comprende tus derechos, evita riesgos legales y habla con nuestra asistente virtual — Alê.",
-    "cta": "💬 Hablar con Alê"
+    "title": "Cumplimiento de software sin dolores de cabeza",
+    "subtitle": "Entiende tus derechos, evita problemas legales y habla con Alê — tu aliada en cumplimiento.",
+    "cta": "💬 ¡Habla con Alê ahora!"
   },
   "footer": {
     "developed": "Desarrollado por Anderson Henrique da Silva",
     "copyright": "© 2025 Ale Assistant • Todos los derechos reservados",
-    "mission": "Promoviendo el uso ético y legal del software en Brasil"
+    "mission": "Haciendo el cumplimiento de software simple y accesible en todo el mundo"
   },
   "ale": {
     "greeting": "¡Hola! Soy Alê, tu asistente virtual.",
+    "status": "En línea • Lista para ayudarte",
+    "welcome": "¡Hola! 😊 ¿Quieres aprender a mantener tu software legal y trabajar sin preocupaciones? ¡Estoy aquí para ayudarte! Primero, ¿cómo te llamas?",
+    "namePlaceholder": "Escribe tu nombre...",
+    "niceToMeet": "¡Mucho gusto, {{name}}! 🌟",
+    "askCompliance": "¿Has oído hablar sobre el cumplimiento de software?",
+    "yes": "Sí",
+    "no": "No",
+    "noComplianceExplanation": "¡No te preocupes! El cumplimiento básicamente significa usar software legal y con licencia. ¡Es súper importante para proteger tu empresa! 💡",
+    "yesComplianceResponse": "¡Excelente! Entonces ya sabes lo importante que es mantener todo en orden. 👍",
+    "askCompany": "¿Cuál es el nombre de tu empresa?",
+    "companyPlaceholder": "Nombre de la empresa...",
+    "askRole": "¿Cuál es tu rol en la empresa?",
+    "roleTech": "Técnico/IT",
+    "roleManager": "Gerente",
+    "roleAdmin": "Administrativo",
+    "roleOther": "Otro",
+    "askAlert": "¿Has recibido alguna alerta o correo sobre el uso de software?",
+    "alertYes": "Sí, recibí",
+    "alertNo": "No recibí",
+    "alertYesResponse": "¡Entiendo! Es súper importante resolver esto rápidamente. ¡Te ayudaré! 🚀",
+    "alertNoResponse": "¡Qué bien! Mantengamos todo así, con todo en orden. 😊",
+    "askAuth": "¡Genial, {{name}}! Para seguir ayudándote y enviarte un informe personalizado, puedes identificarte aquí:",
+    "authGoogleLabel": "Google",
+    "authMetaLabel": "Meta",
+    "authOrEmail": "o ingresa tu correo",
+    "emailPlaceholder": "tu@correo.com",
+    "loginWith": "Inicio de sesión con {{provider}}: {{email}}",
+    "authError": "¡Ups! Algo salió mal. ¿Puedes intentarlo de nuevo?",
+    "askWhatsappMessage": "¡Perfecto, {{name}}! Si prefieres, puedo atenderte directamente en WhatsApp. ¡Es más rápido y práctico! 😉",
+    "whatsappButton": "Continuar en WhatsApp",
+    "whatsappPreferNumber": "Prefiero proporcionar mi número",
+    "whatsappAskNumber": "Si tienes WhatsApp, puedo pedirle a nuestro equipo que te contacte directamente. ¿Cuál es tu número?",
+    "whatsappPlaceholder": "+52 55 1234 5678",
+    "whatsappRedirectMessage": "¡Te he redirigido a WhatsApp! Nuestro equipo te contactará pronto. 📱",
+    "whatsappDefaultMessage": "Hola, soy {{name}} de {{company}}. Hablé con Alê y quiero saber más sobre cumplimiento.",
+    "messagePlaceholder": "Escribe tu mensaje...",
+    "finalNoProblem": "¡Sin problema! Puedo seguir ayudándote aquí mismo.",
+    "finalHereToHelp": "Si tienes alguna pregunta, solo pregúntame. Siempre estoy en línea. 💡",
+    "askWhatsapp": "Para que nuestro equipo pueda contactarte y ayudarte mejor, ¿podrías compartir tu WhatsApp?",
+    "askConsent": "Antes de continuar, necesito tu permiso para usar tus datos solo para orientación sobre software original, ¿está bien?",
+    "consentText": "Tus datos solo se usarán para orientación sobre licencias de software, según nuestra Política de Privacidad.",
+    "accept": "Acepto",
+    "decline": "Prefiero no hacerlo",
+    "consentAccepted": "Autorizo el uso de mis datos",
+    "consentDeclined": "Prefiero no autorizar",
+    "thankYouBusiness": "¡Perfecto! 🎉 Nuestro equipo está disponible ahora y te contactará pronto para ayudarte con la regularización.",
+    "thankYouAfterHours": "¡Gracias! 🌙 He recibido tu información. Nuestro equipo está fuera del horario (9h-18h), ¡pero te contactaremos lo antes posible!",
+    "understandDecline": "¡Sin problema! Si cambias de opinión, estaré aquí para ayudarte. Puedes explorar nuestro sitio para aprender más sobre software original.",
+    "errorSaving": "¡Ups! Tuve un pequeño problema al guardar tu información. ¿Puedes intentarlo de nuevo?",
+    "initializing": "Preparando todo para ti",
+    "close": "Cerrar chat",
     "authTitle": "Para continuar, inicia sesión",
-    "authGoogle": "Iniciar sesión con Google",
-    "authMeta": "Iniciar sesión con Facebook",
+    "authGoogle": "Continuar con Google",
+    "authMeta": "Continuar con Facebook",
     "formTitle": "¡Casi listo! Completa tus datos",
     "formWhatsApp": "WhatsApp (opcional)",
     "formLanguage": "Idioma preferido",
     "consentTitle": "Consentimiento de Privacidad",
-    "consentText": "Acepto el procesamiento de mis datos personales para fines de comunicación sobre Cumplimiento de Software.",
     "submitButton": "Enviar",
-    "successMessage": "¡Gracias! Nos pondremos en contacto pronto.",
-    "outOfHoursMessage": "¡Gracias! Nuestro equipo está fuera del horario de atención. Nos pondremos en contacto lo antes posible.",
+    "successMessage": "¡Gracias! Nos comunicaremos pronto.",
+    "outOfHoursMessage": "¡Gracias! Nuestro equipo está fuera de línea. Te contactaremos cuando regresemos.",
     "errorMessage": "¡Ups! Algo salió mal. Por favor, inténtalo de nuevo."
   },
   "languages": {
@@ -33,27 +84,140 @@
     "selectLanguage": "Seleccionar idioma"
   },
   "riskAlert": {
-    "title": "No pongas en riesgo a ti mismo y a tu cliente.",
-    "description": "Usar software sin licencia puede generar multas, demandas y daños a la reputación de tu empresa. Pero lo más importante: compromete la confianza que tu cliente deposita en ti. Adoptar el Cumplimiento de Software es una actitud ética, preventiva y profesional.",
-    "button": "Cómo protegerse"
+    "title": "Protege tu empresa y a tus clientes",
+    "description": "Usar software con licencia demuestra profesionalismo y respeto por la propiedad intelectual. Además de evitar riesgos legales, garantizas acceso a soporte técnico, actualizaciones de seguridad y construyes una sólida reputación en el mercado.",
+    "button": "Aprende cómo regularizar"
   },
   "compliance": {
-    "title": "Acerca del Cumplimiento de Software",
-    "description": "El Cumplimiento de Software significa usar programas de acuerdo con sus licencias, respetando los derechos de autor y la propiedad intelectual. Es una práctica esencial para empresas que valoran la ética, la seguridad y la sostenibilidad.",
-    "learnMore": "Más información",
+    "title": "¿Qué es el Cumplimiento de Software?",
+    "description": "El Cumplimiento de Software significa usar programas de acuerdo con sus licencias, respetando los derechos de autor y la propiedad intelectual. Es esencial para empresas que valoran la ética, la seguridad y la sostenibilidad.",
+    "learnMore": "Saber más",
     "features": {
       "legal": {
-        "title": "Cumplimiento Legal",
-        "description": "Evita multas y demandas manteniendo tus licencias al día y documentadas."
+        "title": "Protección Legal",
+        "description": "Evita costosas multas y demandas manteniendo tus licencias actualizadas y debidamente documentadas."
       },
       "security": {
-        "title": "Seguridad Garantizada",
-        "description": "El software original recibe actualizaciones de seguridad, protegiendo tus datos y sistemas."
+        "title": "Seguridad Mejorada",
+        "description": "El software con licencia recibe parches de seguridad regulares, protegiendo tus valiosos datos y sistemas."
       },
       "reputation": {
-        "title": "Reputación Empresarial",
-        "description": "Demuestra profesionalismo y ética, fortaleciendo la confianza de clientes y socios."
+        "title": "Credibilidad Profesional",
+        "description": "Demuestra a clientes y socios que manejas un negocio ético en el que pueden confiar."
       }
     }
+  },
+  "sketchup": {
+    "title": "SketchUp para Profesionales de Arquitectura",
+    "subtitle": "Trabaja con tranquilidad y seguridad jurídica. Nuestro equipo especializado te ayuda a regularizar tus licencias de forma simple y accesible.",
+    "itca": {
+      "title": "📋 Programa de Regularización",
+      "description": "Trimble, desarrollador de SketchUp, ofrece programas especiales de regularización para profesionales y empresas. Nuestro equipo está preparado para guiarte en este proceso, garantizando los mejores beneficios y condiciones."
+    },
+    "risks": {
+      "financial": {
+        "title": "Inversión Inteligente",
+        "description": "El costo de una licencia original es mucho menor que los costos potenciales de regularización forzada. Planifica con anticipación y protege tu presupuesto.",
+        "highlight": "$2,000 a $8,000"
+      },
+      "legal": {
+        "title": "Seguridad Jurídica",
+        "description": "Trabaja tranquilo sabiendo que cumples con las leyes de propiedad intelectual y derechos de autor.",
+        "highlight": "Cumplimiento garantizado"
+      },
+      "professional": {
+        "title": "Credibilidad en el Mercado",
+        "description": "Las empresas que respetan las licencias de software demuestran profesionalismo y ganan la confianza de clientes y socios.",
+        "highlight": "Ventaja competitiva"
+      }
+    },
+    "benefits": {
+      "title": "Beneficios del SketchUp Original",
+      "support": "Soporte técnico oficial",
+      "updates": "Actualizaciones regulares",
+      "cloud": "Trimble Connect (nube)",
+      "certification": "Certificado de cumplimiento"
+    },
+    "cta": {
+      "text": "Nuestro equipo especializado está listo para ayudarte a regularizar tu situación",
+      "button": "Comienza Ahora",
+      "hours": "Atención: Lunes a Viernes, 9h a 18h"
+    },
+    "altText": "Arquitecto trabajando"
+  },
+  "complianceExtra": {
+    "sectionTitle": "Tradición e Innovación de la Arquitectura Hispana",
+    "sectionDescription": "Desde la Sagrada Familia de Gaudí hasta las oficinas modernas de hoy, la arquitectura hispana siempre se ha destacado por su creatividad e innovación. Para mantener esta excelencia, es fundamental trabajar con herramientas licenciadas.",
+    "stats": {
+      "tradition": "500+ años",
+      "traditionLabel": "De tradición arquitectónica",
+      "vanguard": "Vanguardia",
+      "vanguardLabel": "Mundial en diseño"
+    },
+    "altTexts": {
+      "pampulha": "Edificio Moderno Hispano - Vista Externa",
+      "heritage": "Patrimonio Mundial UNESCO",
+      "architect": "Arquitecto en computadora",
+      "office": "Oficina de arquitectura"
+    }
+  },
+  "riskAlertExtra": {
+    "altTexts": {
+      "itamaraty": "Edificio Moderno Hispano",
+      "engineering": "Ingeniería Civil",
+      "engineer": "Ingeniero Civil",
+      "professionals": "Profesionales construyendo el futuro"
+    }
+  },
+  "architecture": {
+    "gallery": {
+      "title": "Inspiración de la Arquitectura Moderna Hispana",
+      "description": "Así como los grandes maestros de la arquitectura hispana revolucionaron el mundo con sus formas orgánicas e innovadoras, te ayudamos a construir una base sólida y legal para tu trabajo creativo.",
+      "cta": {
+        "title": "Trabaja con Tranquilidad",
+        "description": "Arquitectos e ingenieros que utilizan software con licencia tienen acceso a recursos exclusivos, soporte técnico y actualizaciones constantes que potencian su creatividad.",
+        "button": "Regularízate Ahora"
+      },
+      "altText": "Arquitecto planificando en computadora"
+    },
+    "brazilian": {
+      "title": "Inspiración de la Arquitectura Moderna Hispana",
+      "description": "Así como la arquitectura hispana revolucionó el mundo con sus formas orgánicas e innovadoras, te ayudamos a construir una base sólida y legal para tu trabajo creativo.",
+      "professionals": {
+        "title": "Profesionales que Construyen el Futuro",
+        "description": "Los arquitectos e ingenieros hispanos están entre los más creativos e innovadores del mundo. Para mantener esta excelencia, es fundamental trabajar con herramientas licenciadas que garanticen seguridad, soporte y actualizaciones constantes.",
+        "stats": {
+          "offices": "+5.000",
+          "officesLabel": "Oficinas regularizadas",
+          "security": "100%",
+          "securityLabel": "Seguridad jurídica"
+        }
+      },
+      "altOffice": "Oficina de arquitectura"
+    }
+  },
+  "buildGreat": {
+    "title": "Construye Cosas Grandes",
+    "subtitle": "con Confianza",
+    "description": "Desde la Sagrada Familia de Gaudí hasta las obras más modernas de hoy, los grandes arquitectos hispanos siempre han construido con herramientas confiables y licenciadas. Sé parte de esta tradición de excelencia e innovación.",
+    "cta": {
+      "title": "Sé Parte de la Historia de la Arquitectura Hispana",
+      "description": "Los grandes proyectos requieren herramientas confiables. Usa software licenciado y construye el futuro de la arquitectura hispana con seguridad jurídica y soporte técnico completo.",
+      "button": "🚀 Comienza Ahora",
+      "features": {
+        "legal": "100% Legal",
+        "support": "Soporte Técnico",
+        "updates": "Actualizaciones"
+      }
+    }
+  },
+  "errors": {
+    "title": "¡Ups! Algo salió mal",
+    "description": "Encontramos un error inesperado. Por favor, intenta recargar la página.",
+    "reload": "Recargar página"
+  },
+  "header": {
+    "logo": "Alê",
+    "subtitle": "Assistant"
   }
 }
