@@ -1,0 +1,224 @@
+{
+  "home": {
+    "title": "Software Compliance sem complicação",
+    "subtitle": "Entenda seus direitos, evite riscos legais e fale com nossa assistente virtual — Alê.",
+    "cta": "💬 Fale com Alê"
+  },
+  "footer": {
+    "developed": "Desenvolvido por Anderson Henrique da Silva",
+    "copyright": "© 2025 Ale Assistant • Todos os direitos reservados",
+    "mission": "Promovendo o uso ético e legal de software no Brasil"
+  },
+  "ale": {
+    "greeting": "Olá! Eu sou a Alê, sua assistente virtual.",
+    "status": "Online • Pronta para ajudar",
+    "welcome": "Oi! 😊 Quer saber como regularizar seu software e trabalhar com tranquilidade? Vou te ajudar! Primeiro, como posso te chamar?",
+    "namePlaceholder": "Digite seu nome...",
+    "niceToMeet": "Prazer em conhecer você, {{name}}! 🌟",
+    "askWhatsapp": "Para nossa equipe entrar em contato e te ajudar melhor, pode compartilhar seu WhatsApp?",
+    "askConsent": "Antes de continuarmos, preciso da sua autorização para usar seus dados apenas para orientação sobre software original, tudo bem?",
+    "consentText": "Seus dados serão usados apenas para orientação sobre licenças de software, conforme nossa Política de Privacidade e a LGPD.",
+    "accept": "Autorizo",
+    "decline": "Prefiro não",
+    "consentAccepted": "Autorizo o uso dos meus dados",
+    "consentDeclined": "Prefiro não autorizar",
+    "thankYouBusiness": "Perfeito! 🎉 Nossa equipe está disponível agora e entrará em contato em breve para te ajudar com a regularização.",
+    "thankYouAfterHours": "Obrigado! 🌙 Recebi suas informações. Nossa equipe está fora do horário (9h-18h), mas entraremos em contato assim que possível!",
+    "understandDecline": "Sem problemas! Se mudar de ideia, estarei aqui para ajudar. Você pode explorar nosso site para saber mais sobre software original.",
+    "errorSaving": "Ops! Tive um probleminha ao salvar suas informações. Pode tentar novamente?",
+    "initializing": "Preparando tudo para você",
+    "close": "Fechar conversa",
+    "authTitle": "Para continuar, faça login",
+    "authGoogle": "Entrar com Google",
+    "authMeta": "Entrar com Facebook",
+    "formTitle": "Quase lá! Complete seus dados",
+    "formWhatsApp": "WhatsApp (opcional)",
+    "formLanguage": "Idioma preferido",
+    "consentTitle": "Consentimento LGPD",
+    "submitButton": "Enviar",
+    "successMessage": "Obrigado! Entraremos em contato em breve.",
+    "outOfHoursMessage": "Obrigado! Nossa equipe está fora do horário de atendimento. Entraremos em contato assim que possível.",
+    "errorMessage": "Ops! Algo deu errado. Por favor, tente novamente."
+  },
+  "languages": {
+    "pt": "Português",
+    "en": "English",
+    "es": "Español"
+  },
+  "common": {
+    "selectLanguage": "Selecionar idioma"
+  },
+  "riskAlert": {
+    "title": "Proteja sua empresa e seus clientes",
+    "description": "O uso de software licenciado é uma demonstração de profissionalismo e respeito aos direitos autorais. Além de evitar riscos legais, você garante acesso a suporte técnico, atualizações de segurança e constrói uma reputação sólida no mercado.",
+    "button": "Saiba como regularizar"
+  },
+  "compliance": {
+    "title": "Sobre Software Compliance",
+    "description": "Software Compliance significa usar programas de acordo com suas licenças, respeitando direitos autorais e propriedade intelectual. É uma prática essencial para empresas que valorizam ética, segurança e sustentabilidade.",
+    "learnMore": "Saiba mais",
+    "features": {
+      "legal": {
+        "title": "Conformidade Legal",
+        "description": "Evite multas e processos judiciais mantendo suas licenças em dia e documentadas."
+      },
+      "security": {
+        "title": "Segurança Garantida",
+        "description": "Software original recebe atualizações de segurança, protegendo seus dados e sistemas."
+      },
+      "reputation": {
+        "title": "Reputação Empresarial",
+        "description": "Demonstre profissionalismo e ética, fortalecendo a confiança de clientes e parceiros."
+      }
+    }
+  },
+  "architecture": {
+    "gallery": {
+      "title": "Inspiração na Arquitetura Moderna Brasileira",
+      "description": "Assim como os grandes mestres da arquitetura brasileira revolucionaram o mundo com suas formas orgânicas e inovadoras, ajudamos você a construir uma base sólida e legal para seu trabalho criativo.",
+      "cta": {
+        "title": "Trabalhe com Tranquilidade",
+        "description": "Arquitetos e engenheiros que utilizam software licenciado têm acesso a recursos exclusivos, suporte técnico e atualizações constantes que potencializam sua criatividade.",
+        "button": "Regularize Agora"
+      },
+      "altText": "Arquiteto planejando no computador"
+    },
+    "brazilian": {
+      "title": "Inspiração na Arquitetura Moderna Brasileira",
+      "description": "Assim como a arquitetura brasileira revolucionou o mundo com suas formas orgânicas e inovadoras, ajudamos você a construir uma base sólida e legal para seu trabalho criativo.",
+      "professionals": {
+        "title": "Profissionais que Constroem o Futuro",
+        "description": "Arquitetos e engenheiros brasileiros estão entre os mais criativos e inovadores do mundo. Para manter essa excelência, é fundamental trabalhar com ferramentas legalizadas que garantam segurança, suporte e atualizações constantes.",
+        "stats": {
+          "offices": "+5.000",
+          "officesLabel": "Escritórios regularizados",
+          "security": "100%",
+          "securityLabel": "Segurança jurídica"
+        }
+      },
+      "altOffice": "Escritório de arquitetura"
+    }
+  },
+  "buildGreat": {
+    "title": "Construa Coisas Grandes",
+    "subtitle": "com Confiança",
+    "description": "Desde a Igreja da Pampulha até as obras mais modernas, os grandes arquitetos brasileiros sempre construíram com ferramentas confiáveis e legalizadas. Faça parte dessa tradição de excelência e inovação.",
+    "cta": {
+      "title": "Seja Parte da História da Arquitetura Brasileira",
+      "description": "Grandes projetos exigem ferramentas confiáveis. Use software licenciado e construa o futuro da arquitetura brasileira com segurança jurídica e suporte técnico completo.",
+      "button": "🚀 Comece Agora",
+      "features": {
+        "legal": "100% Legal",
+        "support": "Suporte Técnico",
+        "updates": "Atualizações"
+      }
+    }
+  },
+  "errors": {
+    "title": "Ops! Algo deu errado",
+    "description": "Encontramos um erro inesperado. Por favor, tente recarregar a página.",
+    "reload": "Recarregar página"
+  },
+  "header": {
+    "logo": "Alê",
+    "subtitle": "Assistant"
+  },
+  "chatConversation": {
+    "complianceQuestion": "Você já ouviu falar sobre compliance em software?",
+    "complianceExplanation": "Sem problemas! Compliance é basicamente usar software legal e licenciado. É importante para evitar problemas judiciais e garantir que sua empresa esteja protegida.",
+    "companyQuestion": "Qual o nome da sua empresa?",
+    "roleQuestion": "Qual é o seu papel na empresa?",
+    "roles": {
+      "tech": "Técnico/TI",
+      "manager": "Gestor",
+      "admin": "Administrativo",
+      "other": "Outro"
+    },
+    "alertQuestion": "Você recebeu algum alerta ou e-mail sobre uso de software?",
+    "placeholders": {
+      "company": "Nome da empresa...",
+      "email": "seu@email.com",
+      "whatsapp": "+55 11 99999-9999",
+      "message": "Digite sua mensagem..."
+    },
+    "answers": {
+      "yes": "Sim",
+      "no": "Não",
+      "received": "Sim, recebi",
+      "notReceived": "Não recebi"
+    },
+    "authOptions": {
+      "google": "Google",
+      "meta": "Meta",
+      "emailLabel": "ou digite seu e-mail"
+    },
+    "whatsappFlow": {
+      "continue": "Continuar no WhatsApp",
+      "prefer": "Prefiro informar meu número",
+      "noProblem": "Sem problemas! Posso continuar por aqui mesmo."
+    }
+  },
+  "complianceExtra": {
+    "sectionTitle": "Tradição e Inovação da Arquitetura Brasileira",
+    "sectionDescription": "Desde a Igreja da Pampulha de Niemeyer até os escritórios modernos de hoje, a arquitetura brasileira sempre se destacou pela criatividade e inovação. Para manter essa excelência, é fundamental trabalhar com ferramentas legalizadas.",
+    "stats": {
+      "tradition": "80+ anos",
+      "traditionLabel": "De tradição arquitetônica",
+      "vanguard": "Vanguarda",
+      "vanguardLabel": "Mundial em design"
+    },
+    "altTexts": {
+      "pampulha": "Igreja da Pampulha - Visão Externa",
+      "heritage": "Patrimônio Mundial UNESCO",
+      "architect": "Arquiteto no computador",
+      "office": "Escritório de arquitetura"
+    }
+  },
+  "riskAlertExtra": {
+    "altTexts": {
+      "itamaraty": "Palácio Itamaraty",
+      "engineering": "Engenharia Civil",
+      "engineer": "Engenheiro Civil",
+      "professionals": "Profissionais construindo o futuro"
+    }
+  },
+  "sketchup": {
+    "title": "SketchUp para Profissionais de Arquitetura",
+    "subtitle": "Trabalhe com tranquilidade e segurança jurídica. Nossa equipe especializada ajuda você a regularizar suas licenças de forma simples e acessível.",
+    "itca": {
+      "title": "📋 Programa de Regularização",
+      "description": "A Trimble, desenvolvedora do SketchUp, oferece programas especiais de regularização para profissionais e empresas. Nossa equipe está preparada para orientar você nesse processo, garantindo os melhores benefícios e condições."
+    },
+    "risks": {
+      "financial": {
+        "title": "Investimento Inteligente",
+        "description": "O valor de uma licença original é muito menor que os custos de uma eventual regularização forçada. Planeje-se e proteja seu orçamento.",
+        "highlight": "R$ 5.000 a R$ 20.000"
+      },
+      "legal": {
+        "title": "Segurança Jurídica",
+        "description": "Trabalhe com tranquilidade sabendo que está em conformidade com a legislação brasileira de direitos autorais e propriedade intelectual.",
+        "highlight": "Conformidade garantida"
+      },
+      "professional": {
+        "title": "Credibilidade no Mercado",
+        "description": "Empresas que respeitam licenças de software demonstram profissionalismo e conquistam a confiança de clientes e parceiros.",
+        "highlight": "Diferencial competitivo"
+      }
+    },
+    "benefits": {
+      "title": "Benefícios do SketchUp Original",
+      "support": "Suporte técnico oficial",
+      "updates": "Atualizações constantes",
+      "cloud": "Trimble Connect (nuvem)",
+      "certification": "Certificado de conformidade"
+    },
+    "cta": {
+      "text": "Nossa equipe especializada está pronta para ajudar você a regularizar sua situação",
+      "button": "Regularize Agora",
+      "hours": "Atendimento: Segunda a Sexta, 9h às 18h"
+    },
+    "altText": "Arquiteto trabalhando"
+  }
+}
+}
