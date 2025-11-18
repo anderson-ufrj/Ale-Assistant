@@ -38,6 +38,7 @@ export default function ArchitectureGallery() {
                   src={image.src}
                   alt={`${image.title} - ${image.architect}`}
                   fill
+                  loading="lazy"
                   className="object-cover group-hover:scale-110 transition-transform duration-500"
                   sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                 />
@@ -72,6 +73,7 @@ export default function ArchitectureGallery() {
                 src={professionalImages[2]?.src || '/images/brazil/archtectplanningoncomputer.jpg'}
                 alt={t('altText')}
                 fill
+                loading="lazy"
                 className="object-cover"
                 sizes="50vw"
               />
