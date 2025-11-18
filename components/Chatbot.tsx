@@ -1,12 +1,12 @@
 'use client'
 
 import { useState, useEffect, useRef } from 'react'
-import { useTranslations } from 'next-intl'
+import { useTranslations, useLocale } from 'next-intl'
 import { motion, AnimatePresence } from 'framer-motion'
 import { getFirebaseAuth, getFirebaseDb } from '@/lib/firebase'
 import type { Auth } from 'firebase/auth'
 
-type ConversationStep = 
+type ConversationStep =
   | 'welcome'
   | 'askName'
   | 'askCompliance'
@@ -17,6 +17,7 @@ type ConversationStep =
   | 'askWhatsapp'
   | 'success'
   | 'final'
+  | 'freeChat' // Novo step para modo RAG
 
 interface Message {
   id: string
@@ -24,6 +25,7 @@ interface Message {
   content: string
   options?: { value: string; label: string }[]
   isTyping?: boolean
+  isRAGResponse?: boolean
 }
 
 interface UserData {
@@ -37,14 +39,22 @@ interface UserData {
   provider: string
 }
 
+interface ConversationMessage {
+  role: 'user' | 'assistant'
+  content: string
+}
+
 export default function Chatbot() {
   const t = useTranslations('ale')
+  const locale = useLocale()
   const [isOpen, setIsOpen] = useState(false)
   const [isVisible, setIsVisible] = useState(false)
   const [currentStep, setCurrentStep] = useState<ConversationStep>('welcome')
   const [messages, setMessages] = useState<Message[]>([])
   const [inputValue, setInputValue] = useState('')
   const [isLoading, setIsLoading] = useState(false)
+  const [isRAGMode, setIsRAGMode] = useState(false)
+  const [conversationHistory, setConversationHistory] = useState<ConversationMessage[]>([])
   const [userData, setUserData] = useState<UserData>({
     name: '',
     email: '',
@@ -80,27 +90,35 @@ export default function Chatbot() {
         addBotMessage(t('greeting') + ' 👋')
         setTimeout(() => {
           addBotMessage(t('welcome'))
-          setCurrentStep('askName')
+
+          // Adiciona opção para modo RAG ou coleta de dados
+          setTimeout(() => {
+            addBotMessage('Você prefere:', [
+              { value: 'rag', label: '💬 Conversar livremente' },
+              { value: 'collect', label: '📋 Preencher dados' }
+            ])
+          }, 1500)
         }, 1500)
       }, 500)
     }
   }, [isOpen, t, messages.length])
 
-  const addBotMessage = (content: string, options?: { value: string; label: string }[]) => {
+  const addBotMessage = (content: string, options?: { value: string; label: string }[], isRAGResponse = false) => {
     const newMessage: Message = {
       id: Date.now().toString(),
       type: 'bot',
       content,
       options,
-      isTyping: true
+      isTyping: true,
+      isRAGResponse
     }
-    
+
     setMessages(prev => [...prev, newMessage])
-    
+
     // Remove typing indicator after a delay
     setTimeout(() => {
-      setMessages(prev => 
-        prev.map(msg => 
+      setMessages(prev =>
+        prev.map(msg =>
           msg.id === newMessage.id ? { ...msg, isTyping: false } : msg
         )
       )
@@ -116,9 +134,63 @@ export default function Chatbot() {
     setMessages(prev => [...prev, newMessage])
   }
 
+  const handleRAGMessage = async (message: string) => {
+    setIsLoading(true)
+
+    try {
+      const response = await fetch('/api/chat', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+          message,
+          conversationHistory,
+          locale,
+          userContext: {
+            name: userData.name || undefined,
+            company: userData.company || undefined,
+            role: userData.role || undefined,
+            receivedAlert: userData.receivedAlert || undefined,
+            knowsCompliance: userData.knowsCompliance || undefined
+          }
+        })
+      })
+
+      const data = await response.json()
+
+      if (data.success && data.response) {
+        // Adiciona à conversa histórica
+        setConversationHistory(prev => [
+          ...prev,
+          { role: 'user', content: message },
+          { role: 'assistant', content: data.response }
+        ])
+
+        // Mostra resposta do RAG
+        setTimeout(() => {
+          addBotMessage(data.response, undefined, true)
+        }, 500)
+      } else {
+        addBotMessage('Desculpe, tive um problema ao processar sua mensagem. Pode tentar novamente? 😅')
+      }
+    } catch (error) {
+      console.error('Erro ao chamar API RAG:', error)
+      addBotMessage('Ops! Estou com dificuldades técnicas no momento. Tente novamente em instantes! 🔧')
+    } finally {
+      setIsLoading(false)
+    }
+  }
+
   const handleUserInput = (value: string) => {
     addUserMessage(value)
     setInputValue('')
+
+    // Se está em modo RAG, usa a API
+    if (isRAGMode) {
+      handleRAGMessage(value)
+      return
+    }
 
     switch (currentStep) {
       case 'askName':
@@ -160,11 +232,33 @@ export default function Chatbot() {
   }
 
   const handleOptionClick = (value: string) => {
+    // Opção inicial: RAG vs Coleta de dados
+    if (messages.length <= 3 && (value === 'rag' || value === 'collect')) {
+      if (value === 'rag') {
+        addUserMessage('💬 Conversar livremente')
+        setIsRAGMode(true)
+        setCurrentStep('freeChat')
+        setTimeout(() => {
+          addBotMessage('Perfeito! Pode me fazer qualquer pergunta sobre compliance de software, regularização, SketchUp, LGPD e muito mais. Estou aqui para ajudar! 💡')
+        }, 500)
+      } else {
+        addUserMessage('📋 Preencher dados')
+        setIsRAGMode(false)
+        setTimeout(() => {
+          addBotMessage(t('welcome'))
+          setTimeout(() => {
+            setCurrentStep('askName')
+          }, 1000)
+        }, 500)
+      }
+      return
+    }
+
     switch (currentStep) {
       case 'askCompliance':
         setUserData({ ...userData, knowsCompliance: value === 'yes' })
         addUserMessage(value === 'yes' ? t('yes') : t('no'))
-        
+
         setTimeout(() => {
           if (value === 'no') {
             addBotMessage(t('noComplianceExplanation'))
@@ -191,7 +285,7 @@ export default function Chatbot() {
           other: t('roleOther')
         }
         addUserMessage(roleLabels[value] || value)
-        
+
         setTimeout(() => {
           addBotMessage(t('askAlert'), [
             { value: 'yes', label: t('alertYes') },
@@ -205,14 +299,14 @@ export default function Chatbot() {
         const updatedUserData = { ...userData, receivedAlert: value === 'yes' }
         setUserData(updatedUserData)
         addUserMessage(value === 'yes' ? t('alertYes') : t('alertNo'))
-        
+
         setTimeout(() => {
           if (value === 'yes') {
             addBotMessage(t('alertYesResponse'))
           } else {
             addBotMessage(t('alertNoResponse'))
           }
-          
+
           setTimeout(() => {
             const authMessage = t('askAuth').replace('{{name}}', updatedUserData.name)
             addBotMessage(authMessage)
@@ -231,21 +325,21 @@ export default function Chatbot() {
     try {
       const { auth, googleProvider } = await getFirebaseAuth()
       const { signInWithPopup } = await import('firebase/auth')
-      
+
       googleProvider.setCustomParameters({
         prompt: 'select_account'
       })
-      
+
       setFirebaseAuth(auth)
       const result = await signInWithPopup(auth, googleProvider)
       const user = result.user
-      
+
       setUserData({
         ...userData,
         email: user.email || '',
         provider: 'google'
       })
-      
+
       addUserMessage(t('loginWith').replace('{{provider}}', 'Google').replace('{{email}}', user.email || ''))
       handleAuthSuccess(userData.name)
     } catch (error: any) {
@@ -261,21 +355,21 @@ export default function Chatbot() {
     try {
       const { auth, facebookProvider } = await getFirebaseAuth()
       const { signInWithPopup } = await import('firebase/auth')
-      
+
       facebookProvider.setCustomParameters({
         display: 'popup'
       })
-      
+
       setFirebaseAuth(auth)
       const result = await signInWithPopup(auth, facebookProvider)
       const user = result.user
-      
+
       setUserData({
         ...userData,
         email: user.email || '',
         provider: 'meta'
       })
-      
+
       addUserMessage(t('loginWith').replace('{{provider}}', 'Meta').replace('{{email}}', user.email || ''))
       handleAuthSuccess(userData.name)
     } catch (error: any) {
@@ -310,12 +404,12 @@ export default function Chatbot() {
       .replace('{{name}}', userData.name)
       .replace('{{company}}', userData.company)
     const whatsappUrl = `https://wa.me/5535984718935?text=${encodeURIComponent(message)}`
-    
+
     // Save user data before redirecting
     saveUserData(userData)
-    
+
     window.open(whatsappUrl, '_blank')
-    
+
     setTimeout(() => {
       addBotMessage(t('whatsappRedirectMessage'))
       setCurrentStep('success')
@@ -326,7 +420,7 @@ export default function Chatbot() {
     try {
       const db = await getFirebaseDb()
       const { collection, addDoc, serverTimestamp } = await import('firebase/firestore')
-      
+
       const leadData = {
         nome: data.name,
         email: data.email,
@@ -339,7 +433,7 @@ export default function Chatbot() {
         data_criacao: serverTimestamp(),
         origem: 'chatbot_ale'
       }
-      
+
       await addDoc(collection(db, 'leads'), leadData)
     } catch (error) {
       console.error('Erro ao salvar dados:', error)
@@ -349,6 +443,8 @@ export default function Chatbot() {
   const resetChat = () => {
     setMessages([])
     setCurrentStep('welcome')
+    setIsRAGMode(false)
+    setConversationHistory([])
     setUserData({
       name: '',
       email: '',
@@ -365,6 +461,12 @@ export default function Chatbot() {
         signOut(firebaseAuth!)
       })
     }
+  }
+
+  const switchToDataCollection = () => {
+    setIsRAGMode(false)
+    setCurrentStep('askName')
+    addBotMessage('Ok! Vamos coletar seus dados para que nossa equipe possa entrar em contato. Como posso te chamar?')
   }
 
   return (
@@ -402,16 +504,16 @@ export default function Chatbot() {
                 setTimeout(resetChat, 300)
               }}
             />
-            
+
             {/* Chat Container */}
             <motion.div
               initial={{ opacity: 0, y: 100 }}
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: 100 }}
               transition={{ type: "spring", damping: 25, stiffness: 300 }}
-              className="fixed z-50 
+              className="fixed z-50
                 bottom-0 right-0 left-0 top-0 lg:bottom-6 lg:right-6 lg:left-auto lg:top-auto
-                lg:w-[380px] lg:h-[600px] 
+                lg:w-[380px] lg:h-[600px]
                 bg-white lg:rounded-2xl shadow-2xl flex flex-col overflow-hidden"
             >
               {/* Header */}
@@ -424,7 +526,7 @@ export default function Chatbot() {
                     <h3 className="font-semibold text-gray-900">Alê Assistant</h3>
                     <p className="text-xs text-gray-500 flex items-center gap-1">
                       <span className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></span>
-                      {t('status')}
+                      {isRAGMode ? '🤖 Modo IA' : t('status')}
                     </p>
                   </div>
                 </div>
@@ -452,6 +554,8 @@ export default function Chatbot() {
                       className={`max-w-[80%] ${
                         message.type === 'user'
                           ? 'bg-orange-500 text-white rounded-2xl rounded-br-md'
+                          : message.isRAGResponse
+                          ? 'bg-purple-100 text-purple-900 rounded-2xl rounded-bl-md border border-purple-200'
                           : 'bg-gray-100 text-gray-800 rounded-2xl rounded-bl-md'
                       } px-4 py-2`}
                     >
@@ -462,15 +566,15 @@ export default function Chatbot() {
                           <div className="w-2 h-2 bg-gray-400 rounded-full animate-bounce" style={{ animationDelay: '300ms' }}></div>
                         </div>
                       ) : (
-                        <p className="text-sm">{message.content}</p>
+                        <p className="text-sm whitespace-pre-wrap">{message.content}</p>
                       )}
                     </div>
                   </div>
                 ))}
 
                 {/* Options */}
-                {messages.length > 0 && 
-                 messages[messages.length - 1].options && 
+                {messages.length > 0 &&
+                 messages[messages.length - 1].options &&
                  !messages[messages.length - 1].isTyping && (
                   <div className="flex flex-wrap gap-2 mt-2">
                     {messages[messages.length - 1].options!.map((option) => (
@@ -482,6 +586,18 @@ export default function Chatbot() {
                         {option.label}
                       </button>
                     ))}
+                  </div>
+                )}
+
+                {/* Botão para trocar de modo (apenas no modo RAG) */}
+                {isRAGMode && (
+                  <div className="flex justify-center mt-4">
+                    <button
+                      onClick={switchToDataCollection}
+                      className="text-xs text-gray-500 hover:text-orange-500 transition-colors underline"
+                    >
+                      📋 Quero falar com a equipe
+                    </button>
                   </div>
                 )}
 
@@ -580,7 +696,7 @@ export default function Chatbot() {
 
               {/* Input Area */}
               <div className="p-4 border-t border-gray-100">
-                {(currentStep === 'askName' || currentStep === 'askCompany' || 
+                {(isRAGMode || currentStep === 'askName' || currentStep === 'askCompany' ||
                   (currentStep === 'askWhatsapp' && messages[messages.length - 1]?.content.includes('Qual seu número')) ||
                   (currentStep === 'askAuth' && messages[messages.length - 1]?.content !== 'Legal')) && (
                   <form
@@ -600,22 +716,32 @@ export default function Chatbot() {
                       type={currentStep === 'askAuth' ? 'email' : 'text'}
                       value={inputValue}
                       onChange={(e) => setInputValue(e.target.value)}
+                      disabled={isLoading}
                       placeholder={
+                        isRAGMode ? 'Digite sua pergunta sobre compliance...' :
                         currentStep === 'askName' ? t('namePlaceholder') :
                         currentStep === 'askCompany' ? t('companyPlaceholder') :
                         currentStep === 'askAuth' ? t('emailPlaceholder') :
                         currentStep === 'askWhatsapp' ? t('whatsappPlaceholder') :
                         t('messagePlaceholder')
                       }
-                      className="flex-1 px-4 py-2 border border-gray-300 rounded-full focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-transparent"
+                      className="flex-1 px-4 py-2 border border-gray-300 rounded-full focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-transparent disabled:opacity-50 disabled:cursor-not-allowed"
                     />
                     <button
                       type="submit"
-                      className="bg-orange-500 hover:bg-orange-600 text-white p-2 rounded-full transition-colors"
+                      disabled={isLoading}
+                      className="bg-orange-500 hover:bg-orange-600 text-white p-2 rounded-full transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
                     >
-                      <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8" />
-                      </svg>
+                      {isLoading ? (
+                        <svg className="animate-spin h-5 w-5" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                          <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
+                          <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                        </svg>
+                      ) : (
+                        <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8" />
+                        </svg>
+                      )}
                     </button>
                   </form>
                 )}
