@@ -63,7 +63,7 @@ O RAG foi implementado para permitir que a Alê (assistente virtual) responda pe
              ▼
 ┌────────────────────────────────────┐
 │  Claude API (Anthropic)            │
-│  - Model: claude-3-5-sonnet        │
+│  - Model: claude-3-5-haiku         │
 │  - Temperature: 0.7                │
 │  - Max tokens: 1024                │
 └────────────────────────────────────┘
@@ -202,11 +202,11 @@ const response = await generateRAGResponse(
   userMessage,
   conversationHistory,
   {
-    model: 'claude-3-5-sonnet-20241022', // Modelo do Claude
-    maxTokens: 1024,                      // Tamanho máx da resposta
-    temperature: 0.7,                     // Criatividade (0-1)
-    topKDocuments: 3,                     // Quantos docs buscar
-    locale: 'pt'                          // Idioma (pt/en/es)
+    model: 'claude-3-5-haiku-20241022', // Modelo do Claude (Haiku - rápido e econômico)
+    maxTokens: 1024,                     // Tamanho máx da resposta
+    temperature: 0.7,                    // Criatividade (0-1)
+    topKDocuments: 3,                    // Quantos docs buscar
+    locale: 'pt'                         // Idioma (pt/en/es)
   }
 );
 ```
@@ -233,14 +233,14 @@ searchWithBoost(
 ### Tempos Médios
 
 - **Busca vetorial**: ~30-50ms
-- **Chamada Claude API**: 500-2000ms
-- **Total (usuário)**: 1-3 segundos
+- **Chamada Claude API (Haiku)**: 300-1000ms (mais rápido que Sonnet!)
+- **Total (usuário)**: 0.5-2 segundos
 
-### Custos (Anthropic)
+### Custos (Anthropic - Haiku)
 
-- **Input**: ~$3 / milhão de tokens
-- **Output**: ~$15 / milhão de tokens
-- **Estimativa por conversa**: $0.01 - $0.05
+- **Input**: $0.25 / milhão de tokens
+- **Output**: $1.25 / milhão de tokens
+- **Estimativa por conversa**: $0.001 - $0.005 (muito econômico!)
 
 ### Limites
 

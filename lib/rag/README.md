@@ -184,7 +184,7 @@ Obtenha sua chave em: https://console.anthropic.com/
 
 ```typescript
 interface RAGConfig {
-  model?: string;           // Padrão: 'claude-3-5-sonnet-20241022'
+  model?: string;           // Padrão: 'claude-3-5-haiku-20241022' (rápido e econômico)
   maxTokens?: number;       // Padrão: 1024
   temperature?: number;     // Padrão: 0.7 (0-1, criatividade)
   topKDocuments?: number;   // Padrão: 3 (quantos docs buscar)
@@ -209,8 +209,8 @@ O sistema usa prompts otimizados para cada idioma (pt/en/es) que instruem Claude
 ### Métricas Típicas
 
 - **Busca vetorial**: < 50ms (10 documentos)
-- **Claude API**: 500-2000ms (depende da resposta)
-- **Total**: ~1-3 segundos
+- **Claude API (Haiku)**: 300-1000ms (mais rápido e barato!)
+- **Total**: ~0.5-2 segundos
 
 ### Otimizações
 
@@ -278,7 +278,7 @@ Certifique-se que `initializeRAG()` foi chamado antes de usar.
 
 - Reduza `maxTokens` (respostas mais curtas)
 - Reduza `topKDocuments` (menos contexto)
-- Use modelo mais rápido (haiku)
+- Já está usando Haiku (mais rápido disponível!)
 
 ## Licença
 

@@ -51,7 +51,7 @@ export async function generateRAGResponse(
   config: RAGConfig = {}
 ): Promise<RAGResponse> {
   const {
-    model = 'claude-3-5-sonnet-20241022',
+    model = 'claude-3-5-haiku-20241022',
     maxTokens = 1024,
     temperature = 0.7,
     topKDocuments = 3,
